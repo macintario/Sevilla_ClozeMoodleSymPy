@@ -15,7 +15,7 @@ import static com.uam.constantes.Constantes.XML_PREFIJO;
 import static com.uam.constantes.Constantes.XML_SUFIJO;
 import static com.uam.utilidades.Utilidades.maximoComunDivisor;
 
-public class GeneradorReactivo_cociente implements GeneradorReactivoCloze {
+public class GenQuotient implements GeneradorReactivoCloze {
     /**
      * El número de dígitos para el número de reactivo que se pondrá como
      * comentario del reactivo. e.g. si el número de posiciones es 3 entonces el
@@ -164,7 +164,7 @@ public class GeneradorReactivo_cociente implements GeneradorReactivoCloze {
         reactivo = reactivo.replace("$RESPUESTA_P$", respuestaP.toString());
 
         /* Aquí se llama al codigo que arma la solución en Python */
-        solucion = solucion+solucionaSimbolico.derivaSimbolico(expresion);
+        solucion = solucion+solucionaSimbolico.derivaSimbolico(expresion,"x");
 
         reactivo = reactivo.replace("$SOLUCION$", solucion);
 
@@ -174,7 +174,7 @@ public class GeneradorReactivo_cociente implements GeneradorReactivoCloze {
     }
 
     public static void main(String[] args) {
-        EjecutadorGeneradorXML.generarReactivos(NOMBRE_ARCHIVO_SALIDA, NUMERO_DE_REACTIVOS, new GeneradorReactivo_cociente());
+        EjecutadorGeneradorXML.generarReactivos(NOMBRE_ARCHIVO_SALIDA, NUMERO_DE_REACTIVOS, new GenQuotient());
     }
 
 

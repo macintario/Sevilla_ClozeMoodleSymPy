@@ -1,7 +1,5 @@
 package com.uam.auxiliar;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -74,11 +72,14 @@ public class solucionaSimbolico {
             "from sympy.strategies.core import switch\n" +
             "from sympy.core.compatibility import reduce\n" +
             "from sympy import factor\n" +
+            "from sympy import simplify\n" +
             "from sympy import Symbol\n" +
             "from sympy import pi\n" +
             "from sympy import sin\n" +
             "from sympy import cos\n" +
             "from sympy import solve\n" +
+            "from sympy.plotting import plot\n" +
+            "import seaborn as sns\n"+
             "\n" +
             "from contextlib import contextmanager\n" +
             "\n" +
@@ -819,7 +820,7 @@ public class solucionaSimbolico {
     private static final String PARSER =                 "##MAIN##\n" +
             "\n" +
             "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-            "x = symbols('x')\n" +
+            "$VARIABLEIND$ = symbols(\'$VARIABLEIND$\')\n" +
             "expr = parse_latex(r\"$EXPRESION$\").subs({Symbol('pi'): pi})\n";
     /**
      * Escribe en el archivo de salida, abierto en el fragmento PARSER, el problema
@@ -830,10 +831,10 @@ public class solucionaSimbolico {
      * @author Iván Gutiérrez
      */
     private static final String SOLVER =
-                    "salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr,x)))\n" +
-                            "solucion = print_html_steps(expr, x)\n" +
-                            "solucion=acomodaNotacion(solucion)\n"+
-                            "salida.write(solucion)\n" ;
+            "salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr,$VARIABLEIND$)))\n" +
+                    "solucion = print_html_steps(expr, $VARIABLEIND$)\n" +
+                    "solucion=acomodaNotacion(solucion)\n"+
+                    "salida.write(solucion)\n" ;
     /**
      * Scriptlet para obtener la tangente a una curva en un punto
      * <p>
@@ -844,25 +845,25 @@ public class solucionaSimbolico {
      * @author Iván Gutiérrez
      */
     private static final String SOLVER_RECTA_TANGENTE =
-                       "x0 = $X0$\n"
-                     +"salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, x)))\n"
-                     +"solucion = print_html_steps(expr, x)\n"
-                     +"solucion = acomodaNotacion(solucion)\n"
-                     +"salida.write(solucion)\n"
-                     +"derivada = Derivative(expr)\n"
-                     +"y_0 = expr.subs(x, x0)\n"
-                     +"yp_0 = derivada.subs(x, x0)\n"
-                     +"salida.write(\"\\n Evaluamos en $$x_{0}=$X0$ $$\\n<br/><br/>\")\n"
-                     + "salida.write(\" Sustituyendo en $$f(x)$$ el valor de $$x_{0}$$<br/><center>$$f(x_{0})=%s$$</center> \\n<br/><br/>\" % latex(y_0))\n" +
-                               "solucion=\"Sustituyendo en $$f'(x)$$ el valor de $$x_{0}$$<br/><center>$$f'(x_{0})=%s=%s$$</center> \\n<br/><br/>\" % (latex(yp_0), latex(yp_0.doit()))\n" +
-                               "solucion=solucion.replace(\"+-\",\"-\")\n" +
-                               "solucion = solucion.replace(\"--\",\"+\")\n" +
-                               "salida.write(solucion)\n"
-                     +"salida.write(\"Sustituyendo en la ecuación de la recta $$y-f(x_{0})=f'(x_{0})(x-x_{0})$$ obtenemos:\\n<br/><center>$$y-(%s)=(%s)(x-(%s))$$ </center>\\n<br/>\" % (\n"
-                     +"latex(y_0.doit()), latex(yp_0.doit()), x0))\n"
-                     +"solucion=\"Simplificando:\\n<br/><center>$$y=%sx+%s$$</center><br/><br/>\"%(latex(yp_0.doit()),latex(y_0.doit()-yp_0.doit()*x0))\n"
-                     +"solucion=solucion.replace(\"+-\",\"-\")\n"
-                     +"salida.write(solucion)\n"
+            "x0 = $X0$\n"
+                    +"salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, x)))\n"
+                    +"solucion = print_html_steps(expr, $VARIABLEIND$)\n"
+                    +"solucion = acomodaNotacion(solucion)\n"
+                    +"salida.write(solucion)\n"
+                    +"derivada = Derivative(expr)\n"
+                    +"y_0 = expr.subs(x, x0)\n"
+                    +"yp_0 = derivada.subs(x, x0)\n"
+                    +"salida.write(\"\\n Evaluamos en $$x_{0}=$X0$ $$\\n<br/><br/>\")\n"
+                    + "salida.write(\" Sustituyendo en $$f(x)$$ el valor de $$x_{0}$$<br/><center>$$f(x_{0})=%s$$</center> \\n<br/><br/>\" % latex(y_0))\n" +
+                    "solucion=\"Sustituyendo en $$f'(x)$$ el valor de $$x_{0}$$<br/><center>$$f'(x_{0})=%s=%s$$</center> \\n<br/><br/>\" % (latex(yp_0), latex(yp_0.doit()))\n" +
+                    "solucion=solucion.replace(\"+-\",\"-\")\n" +
+                    "solucion = solucion.replace(\"--\",\"+\")\n" +
+                    "salida.write(solucion)\n"
+                    +"salida.write(\"Sustituyendo en la ecuación de la recta $$y-f(x_{0})=f'(x_{0})(x-x_{0})$$ obtenemos:\\n<br/><center>$$y-(%s)=(%s)(x-(%s))$$ </center>\\n<br/>\" % (\n"
+                    +"latex(y_0.doit()), latex(yp_0.doit()), x0))\n"
+                    +"solucion=\"Simplificando:\\n<br/><center>$$y=%sx+%s$$</center><br/><br/>\"%(latex(yp_0.doit()),latex(y_0.doit()-yp_0.doit()*x0))\n"
+                    +"solucion=solucion.replace(\"+-\",\"-\")\n"
+                    +"salida.write(solucion)\n"
             ;
     /**
      * Scriplet para obtener la tangente horizontal.<p>
@@ -873,13 +874,13 @@ public class solucionaSimbolico {
      * @author Iván Gutiérrez
      */
     private static final String SOLVER_TANGENTE_HORIZONTAL =
-            "salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, x)))\n" +
-                    "solucion = print_html_steps(expr, x)\n" +
+            "salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, $VARIABLEIND$)))\n" +
+                    "solucion = print_html_steps(expr, $VARIABLEIND$)\n" +
                     "solucion = acomodaNotacion(solucion)\n" +
                     "salida.write(solucion)\n" +
                     "derivada = Derivative(expr)\n" +
                     "derivada = derivada.doit()\n" +
-                    "anula = solve(derivada, x)\n" +
+                    "anula = solve(derivada, $VARIABLEIND$)\n" +
                     "solucion = \"Resolviendo $$%s=0$$ obtenemos las raices<br/>\" % (latex(derivada))\n" +
                     "n = 1\n" +
                     "for x_0 in anula:\n" +
@@ -895,18 +896,216 @@ public class solucionaSimbolico {
                     "salida.write(solucion)\n"
             ;
     /**
+     * Scriplet para obtener la tangente horizontal.<p>
+     * 1. Se deriva la expresión.
+     * 2. Su iguala con cero y se resuelve.
+     * 3. Con las soluciones se sustituye en la ecuación original para encontrar
+     * los puntos.
+     * 4. Construye una gráfica SVG del problema y lo incluye en la solución
+     * @author Iván Gutiérrez
+     */
+    private static final String SOLVER_TANGENTE_HORIZONTAL_GRAFICA_SVG =
+            /* hay que instalar seaborn y matplotlib para que esta parte funcione bien*/
+            "salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, $VARIABLEIND$)))\n" +
+                    "solucion = print_html_steps(expr, $VARIABLEIND$)\n" +
+                    "solucion = acomodaNotacion(solucion)\n" +
+                    "salida.write(solucion)\n" +
+                    "sns.set()\n" +
+                    "sns.set_style(\"whitegrid\", {'grid.linestyle': '--'})\n"+
+                    "grafica = plot(expr,(x,-50,50), show=False, line_color='blue')\n"+
+                    "xmin=1\n"+
+                    "xmax=-1\n"+
+                    "ymin=1\n"+
+                    "ymax=-1\n"+
+                    "anotaciones = []\n"+
+                    "derivada = Derivative(expr)\n" +
+                    "derivada = derivada.doit()\n" +
+                    "anula = solve(derivada, x)\n" +
+                    "solucion = \"Resolviendo $$%s=0$$ obtenemos las raices<br/>\" % (latex(derivada))\n" +
+                    "n = 1\n" +
+                    "for x_0 in anula:\n" +
+                    "    solucion = solucion + \"$$x_%s=%s$$ <br/>\" % (n, latex(x_0))\n" +
+                    "    if x_0 > xmax: \n"+
+                    "       xmax = x_0+1\n"+
+                    "    if x_0 < xmin: \n"+
+                    "       xmin = x_0-1\n"+
+                    "    n = n+1\n" +
+                    "n = 1\n" +
+                    "solucion = solucion+\"Sustituyendo en $$%s$$, se obtienen los puntos:<br/>\"%(latex(expr))\n" +
+                    "for x_0 in anula:\n" +
+                    "    y = expr.subs(x, x_0)\n" +
+                    "    solucion = solucion + \"$$P_%s(%s,%s)$$<br/>\" % (n,latex(x_0), latex(y))\n" +
+                    "    if y > ymax:\n" +
+                    "       ymax = y+1\n" +
+                    "    if y < ymin:\n" +
+                    "       ymin = y-1\n"+
+                    "    tangente = plot(y,(x,-80,80),show=False, line_color='red')\n"+
+                    "    anotaciones.append({'xy': (x_0, y+.1), 'text': \"P\"+str(n)+\"(\"+str(float(x_0))+\",\"+str(float(y))+\")\"})\n"+
+                    "    grafica.extend(tangente)\n" +
+                    "    n = n+1\n" +
+                    "\n" +
+                    "intervalox = xmax-xmin\n" +
+                    "centrox = (xmax + xmin)/2\n" +
+                    "centroy = (ymax + ymin)/2\n" +
+                    "intervalo = ymax-ymin\n" +
+                    "if intervalox > intervalo:\n" +
+                    "    intervalo = intervalox\n" +
+                    "intervalo = intervalo*6/10\n" +
+                    "xmax=centrox+intervalo\n" +
+                    "xmin=centrox-intervalo\n" +
+                    "ymax=centroy+intervalo\n" +
+                    "ymin=centroy-intervalo\n" +
+                    "salida.write(solucion)\n"+
+                    "grafica.xlim=(float(xmin), float(xmax))\n"+
+                    "grafica.ylim=(float(ymin), float(ymax))\n"+
+                    "grafica.annotations = anotaciones\n"+
+                    "grafica.title = \"$y=\"+latex(simplify(expr))+\"$\"\n" +
+                    "grafica.ylabel = False\n"+
+                    "grafica.save('/tmp/grafica_$UUID$.svg')\n"+
+                    "aSVG = open('/tmp/grafica_$UUID$.svg','r')\n" +
+                    "svgLines = aSVG.readlines()\n" +
+                    "iniciaSVG=False\n" +
+                    "for linea in svgLines:\n" +
+                    "    if \"<SVG\" in linea or \"<svg\" in linea:\n" +
+                    "        iniciaSVG = True\n" +
+                    "    if iniciaSVG:\n" +
+                    "        salida.write(linea)\n" +
+                    "salida.write('<br>')\n"+
+                    "aSVG.close()\n"
+            ;
+    /**
+     * Scriplet para obtener la tangente horizontal.<p>
+     * 1. Se deriva la expresión.
+     * 2. Su iguala con cero y se resuelve.
+     * 3. Con las soluciones se sustituye en la ecuación original para encontrar
+     * los puntos.
+     * 4. Construye una gráfica con el plug-in JSX (JavaScript) del problema y lo incluye en la solución
+     * JSX Graphs funciona en JavaScript
+     * ES NECESARIO INSTALAR EN EL SERVIDOR DE MOODLE EL PLUG-IN JSX
+     * @author Iván Gutiérrez
+     */
+    private static final String SOLVER_TANGENTE_HORIZONTAL_GRAFICA_JSX =
+            /* hay que instalar seaborn y matplotlib para que esta parte funcione bien*/
+            "salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, $VARIABLEIND$)))\n" +
+                    "solucion = print_html_steps(expr, $VARIABLEIND$)\n" +
+                    "solucion = acomodaNotacion(solucion)\n" +
+                    "salida.write(solucion)\n" +
+                    "derivada = Derivative(expr)\n" +
+                    "derivada = derivada.doit()\n" +
+                    "anula = solve(derivada, x)\n" +
+                    "puntos = []\n" +
+                    "xmin,xmax = 100,-100\n" +
+                    "ymin,ymax = 100,-100\n" +
+                    "solucion = \"Resolviendo $$%s=0$$ obtenemos las raices<br/>\" % (latex(derivada))\n" +
+                    "n = 1\n" +
+                    "for x_0 in anula:\n" +
+                    "    solucion = solucion + \"$$x_%s=%s$$ <br/>\" % (n, latex(x_0))\n" +
+                    "    n = n+1\n" +
+                    "n = 1\n" +
+                    "solucion = solucion+\"Sustituyendo en $$%s$$, se obtienen los puntos:<br/>\"%(latex(expr))\n" +
+                    "for x_0 in anula:\n" +
+                    "    y = expr.subs(x, x_0)\n" +
+                    "    puntos.append([x_0,y])\n" +
+                    "    if x_0 > xmax:\n" +
+                    "        xmax=x_0\n" +
+                    "    if x_0 < xmin:\n" +
+                    "        xmin=x_0\n" +
+                    "    if y > ymax:\n" +
+                    "        ymax=y\n" +
+                    "    if y < ymin:\n" +
+                    "        ymin=y\n" +
+                    "    solucion = solucion + \"$$P_%s(%s,%s)$$<br/>\" % (n,latex(x_0), latex(y))\n" +
+                    "    n = n+1\n" +
+                    "if (xmax-xmin) < (ymax-ymin):\n" +
+                    "    intervalo = ymax-ymin\n" +
+                    "else:\n" +
+                    "    intervalo = xmax-xmin\n" +
+                    "intervalo=round(intervalo*6/10)+1\n"+
+                    "centrox = (xmax + xmin)/2\n" +
+                    "centroy = (ymax + ymin)/2\n" +
+                    "xmin = centrox-intervalo\n" +
+                    "xmax = centrox+intervalo\n" +
+                    "ymin = centroy-intervalo\n" +
+                    "ymax = centroy+intervalo\n" +
+                    "salida.write(solucion)\n" +
+                    "salida.write('\\n<jsxgraph width=\"600\" height=\"500\">\\n')\n" +
+                    "funcion = 'function f(x) { return '+str(expr)+'; }\\n '\n" +
+                    "salida.write(funcion)\n"+
+                    "\n"+
+                    "salida.write('var brd = JXG.JSXGraph.initBoard(BOARDID, {" +
+                    "boundingbox:['+str(xmin)+','+str(ymax)+','+str(xmax)+','+str(ymin)+'], axis:true});\\n')\n" +
+                    "i = 0\n"+
+                    "for xt, yt in puntos:\n"+
+                    "    i = i + 1\n"+
+                    "    nombrepunto=\"\'P\" + str(i)+\"'\"\n"+
+                    "    salida.write('var p = brd.create(\"point\", ['+str(xt)+','+str(yt)+'],{name:' + nombrepunto + ',fixed:true});\\n')\n" +
+                    "    salida.write('var l = brd.create(\"functiongraph\",[function(x){ return '+str(yt)+';}]);\\n')\n" +
+                    "salida.write('var c = brd.create(\"functiongraph\", f, {strokewidth:2});\\n')\n" +
+                    "salida.write('</jsxgraph>\\n')\n"
+            ;
+    /**
+     * Scriptlet para obtener la tangente a una curva en un punto y graficar
+     * <p>
+     * 1.-Se deriva la expresión, como en el scriptlet del SOLVER,
+     * escribiendo el procedimiento en el archivo de salida.
+     * <p>
+     * 2.-Se evalúa la derivada en el punto solicitado y se escribe la solución.
+     * 3.-Se genera grafica SVG
+     * @author Iván Gutiérrez
+     */
+    private static final String SOLVER_RECTA_TANGENTE_GRAFICA =
+            "x0 = $X0$\n"
+                    +"salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, x)))\n"
+                    +"solucion = print_html_steps(expr, $VARIABLEIND$)\n"
+                    +"solucion = acomodaNotacion(solucion)\n"
+                    +"salida.write(solucion)\n"
+                    +"derivada = Derivative(expr)\n"
+                    +"y_0 = expr.subs(x, x0)\n"
+                    +"yp_0 = derivada.subs(x, x0)\n"
+                    +"salida.write(\"\\n Evaluamos en $$x_{0}=$X0$ $$\\n<br/><br/>\")\n"
+                    + "salida.write(\" Sustituyendo en $$f(x)$$ el valor de $$x_{0}$$<br/><center>$$f(x_{0})=%s$$</center> \\n<br/><br/>\" % latex(y_0))\n" +
+                    "solucion=\"Sustituyendo en $$f'(x)$$ el valor de $$x_{0}$$<br/><center>$$f'(x_{0})=%s=%s$$</center> \\n<br/><br/>\" % (latex(yp_0), latex(yp_0.doit()))\n" +
+                    "solucion=solucion.replace(\"+-\",\"-\")\n" +
+                    "solucion = solucion.replace(\"--\",\"+\")\n" +
+                    "salida.write(solucion)\n"
+                    +"salida.write(\"Sustituyendo en la ecuación de la recta $$y-f(x_{0})=f'(x_{0})(x-x_{0})$$ obtenemos:\\n<br/><center>$$y-(%s)=(%s)(x-(%s))$$ </center>\\n<br/>\" % (\n"
+                    +"latex(y_0.doit()), latex(yp_0.doit()), x0))\n"
+                    +"solucion=\"Simplificando:\\n<br/><center>$$y=%sx+%s$$</center><br/><br/>\"%(latex(yp_0.doit()),latex(y_0.doit()-yp_0.doit()*x0))\n"
+                    +"solucion=solucion.replace(\"+-\",\"-\")\n"
+                    +"salida.write(solucion)\n"
+                    +"xmin=x0-5\n" +
+                    "xmax=x0+5\n" +
+                    "ymin=y_0-5\n" +
+                    "ymax=y_0+5\n" +
+                    "m=yp_0.doit()\n" +
+                    "b=y_0.doit()-yp_0.doit()*x0\n" +
+                    "tanexpr = str(m)+'*x+('+str(b)+')'\n" +
+                    "salida.write('\\n<jsxgraph width=\"600\" height=\"500\">\\n')\n" +
+                    "funcion = 'function f(x) { return '+ str(expr)+'; }\\n '\n" +
+                    "tangente= 'function t(x) { return '+ tanexpr+'; }\\n'\n" +
+                    "salida.write(funcion)\n" +
+                    "salida.write(tangente)\n" +
+                    "\n" +
+                    "salida.write('var brd = JXG.JSXGraph.initBoard(BOARDID, {boundingbox:['+str(xmin)+','+str(ymax)+','+str(xmax)+','+str(ymin)+'], axis:true});\\n')\n" +
+                    "salida.write('var p = brd.create(\"point\", ['+str(x0)+','+str(y_0)+'],{name:\\'P0\\',fixed:true});\\n')\n" +
+                    "salida.write('var l = brd.create(\"functiongraph\", t, {strokecolor:\\'green\\'});\\n')\n"+
+                    "salida.write('var c = brd.create(\"functiongraph\", f, {strokewidth:2});\\n')\n" +
+                    "salida.write('</jsxgraph>\\n')\n"
+            ;
+
+    /**
      * Scriptlet de Python para efectuar derivadas sucesivas.
      * Se concatena sucesivamente para obtener derivadas de mayor orden
      * @author Iván Gutiérrez
      */
     private static final String DIFF_STEP =
-                            "derivada = Derivative(expr)\n"+
-                            "derivada = factor(derivada.doit())\n"+
-                            "salida.write(\"<br/>Siguiente derivada<br/>Obtener: $$%s$$<br><br>\" % latex(Derivative(derivada,x)))\n" +
-                            "solucion = print_html_steps(derivada, x)\n" +
-                            "solucion=acomodaNotacion(solucion)\n"+
-                            "expr = derivada\n" +
-                            "salida.write(solucion)\n" ;
+            "derivada = Derivative(expr)\n"+
+                    "derivada = factor(derivada.doit())\n"+
+                    "salida.write(\"<br/>Siguiente derivada<br/>Obtener: $$%s$$<br><br>\" % latex(Derivative(derivada,$VARIABLEIND$)))\n" +
+                    "solucion = print_html_steps(derivada, $VARIABLEIND$)\n" +
+                    "solucion=acomodaNotacion(solucion)\n"+
+                    "expr = derivada\n" +
+                    "salida.write(solucion)\n" ;
     /**
      * Cierra el archivo en el que se escribe la salida.
      * Debe ser el último elemento que se concatena para
@@ -1442,12 +1641,14 @@ public class solucionaSimbolico {
      * Ejecuta el script. <p>
      * Regresa la solución en HTML. <p>
      * @param expresion String en LaTeX a derivar
+     * @param variableindep variable respecto de la que se derivará. Usualmente 'x'
      * @return String con solución paso a paso en HTML
      * @author Iván Gutiérrez
      */
-    public static String derivaSimbolico(String expresion){
+    public static String derivaSimbolico(String expresion, String variableindep){
         String script = DERIVADOR+PARSER+SOLVER+CLOSER;
         script = script.replace("$EXPRESION$", expresion);
+        script = script.replace("$VARIABLEIND$", variableindep);
         String solucion = ejecutaPython(script);
         return solucion;
     }
@@ -1459,12 +1660,14 @@ public class solucionaSimbolico {
      * Ejecuta el script. <p>
      * Regresa la solución en HTML. <p>
      * @param expresion String en LaTeX a derivar
+     * @param variableindep
      * @return String con solución paso a paso en HTML
      * @author Iván Gutiérrez
      */
-    public static String derivaSimbolicoSegunda(String expresion){
+    public static String derivaSimbolicoSegunda(String expresion, String variableindep){
         String script = DERIVADOR+PARSER+SOLVER+DIFF_STEP+CLOSER;
         script = script.replace("$EXPRESION$", expresion);
+        script = script.replace("$VARIABLEIND$", variableindep);
         String solucion = ejecutaPython(script);
         return solucion;
     }
@@ -1477,12 +1680,35 @@ public class solucionaSimbolico {
      * Regresa la solución en HTML. <p>
      * @param expresion String en LaTeX a derivar
      * @param x0 abscisa del punto de tangencia
+     * @param variableindep
      * @return String con solución paso a paso en HTML
      * @author Iván Gutiérrez
      */
-    public static String rectaTangente(String expresion, Integer x0){
+    public static String rectaTangente(String expresion, Integer x0, String variableindep){
         String script = DERIVADOR+PARSER+SOLVER_RECTA_TANGENTE+CLOSER;
         script = script.replace("$EXPRESION$", expresion);
+        script = script.replace("$VARIABLEIND$", variableindep);
+        script = script.replace("$X0$", x0.toString());
+        String solucion = ejecutaPython(script);
+        return solucion;
+    }
+    /**
+     * Encuentra la recta tangente a funciones \f$f(x)\f$ en un punto \f$x_0\f$<p>
+     * Regresa la derivación paso a paso y la ecuación de la recta.<p>
+     * Construye un script Python con los scriptlets DERIVADOR,PARSER,SOLVER_RECTA_TANGENTE y CLOSER.<p>
+     * Sustituye en el script la expresión en LaTeX pasada como parámetro.<p>
+     * Ejecuta el script. <p>
+     * Regresa la solución en HTML. <p>
+     * @param expresion String en LaTeX a derivar
+     * @param x0 abscisa del punto de tangencia
+     * @param variableindep
+     * @return String con solución paso a paso en HTML
+     * @author Iván Gutiérrez
+     */
+    public static String rectaTangenteGrafica(String expresion, Integer x0, String variableindep){
+        String script = DERIVADOR+PARSER+SOLVER_RECTA_TANGENTE_GRAFICA+CLOSER;
+        script = script.replace("$EXPRESION$", expresion);
+        script = script.replace("$VARIABLEIND$", variableindep);
         script = script.replace("$X0$", x0.toString());
         String solucion = ejecutaPython(script);
         return solucion;
@@ -1496,13 +1722,55 @@ public class solucionaSimbolico {
      * Ejecuta el script. <p>
      * Regresa la solución en HTML. <p>
      * @param expresion String con función en LaTeX
+     * @param variableindep
      * @return String en HTML con la solución paso a paso de la derivada
      * y las ecuaciones de las rectas horizontales
      * @author Iván Gutiérrez
      */
-    public static String tangentesHorizontales(String expresion){
+    public static String tangentesHorizontales(String expresion, String variableindep){
         String script = DERIVADOR+PARSER+SOLVER_TANGENTE_HORIZONTAL+CLOSER;
         script = script.replace("$EXPRESION$", expresion);
+        script = script.replace("$VARIABLEIND$", variableindep);
+        String solucion = ejecutaPython(script);
+        return solucion;
+    }
+    /**
+     * Encuentra las rectas tangentes horizontales \f$f(x)\f$<p>
+     * Regresa la derivación paso a paso y la ecuación de la recta.<p>
+     * Construye un script Python con los scriptlets DERIVADOR,PARSER,SOLVER_TANGENTE_HORIZONTAL_GRAFICA_SVG y CLOSER.<p>
+     * Sustituye en el script la expresión en LaTeX pasada como parámetro.<p>
+     * Ejecuta el script. <p>
+     * Regresa la solución en HTML. <p>
+     * @param expresion String con función en LaTeX
+     * @param variableindep
+     * @return String en HTML con la solución paso a paso de la derivada
+     * y las ecuaciones de las rectas horizontales
+     * @author Iván Gutiérrez
+     */
+    public static String tangentesHorizontalesGraficaSVG(String expresion, String variableindep){
+        String script = DERIVADOR+PARSER+ SOLVER_TANGENTE_HORIZONTAL_GRAFICA_SVG +CLOSER;
+        script = script.replace("$EXPRESION$", expresion);
+        script = script.replace("$VARIABLEIND$", variableindep);
+        String solucion = ejecutaPython(script);
+        return solucion;
+    }
+    /**
+     * Encuentra las rectas tangentes horizontales \f$f(x)\f$<p>
+     * Regresa la derivación paso a paso y la ecuación de la recta.<p>
+     * Construye un script Python con los scriptlets DERIVADOR,PARSER,SOLVER_TANGENTE_HORIZONTAL_GRAFICA_JSX y CLOSER.<p>
+     * Sustituye en el script la expresión en LaTeX pasada como parámetro.<p>
+     * Ejecuta el script. <p>
+     * Regresa la solución en HTML. <p>
+     * @param expresion String con función en LaTeX
+     * @param variableindep
+     * @return String en HTML con la solución paso a paso de la derivada
+     * y las ecuaciones de las rectas horizontales
+     * @author Iván Gutiérrez
+     */
+    public static String tangentesHorizontalesGraficaJSX(String expresion, String variableindep){
+        String script = DERIVADOR+PARSER+ SOLVER_TANGENTE_HORIZONTAL_GRAFICA_JSX +CLOSER;
+        script = script.replace("$EXPRESION$", expresion);
+        script = script.replace("$VARIABLEIND$", variableindep);
         String solucion = ejecutaPython(script);
         return solucion;
     }
