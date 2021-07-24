@@ -67,25 +67,14 @@ public class GenTangentPointGraph implements GeneradorReactivoCloze {
     private static final int[] COTA_CONSTANTE_B = {-5, 5};
     private static final int[] COTA_CONSTANTE_C = {-5, 5};
     private static final int[] COTA_CONSTANTE_D = {-9, 9};
-    private static final int[] COTA_CONSTANTE_E = {2, 9};
-    private static final int[] COTA_CONSTANTE_F = {2, 9};
     private static final int[] COTA_CONSTANTE_G = {3, 5};
     private static final int[] COTA_CONSTANTE_H = {2, 5};
     private static final int[] COTA_X_0 = {-2, 2};
 
     private static final String EXPRESION = "$CONSTANTEA$x^3+$CONSTANTEB$x^2+$CONSTANTEC$x+$CONSTANTED$";
     private String RESPUESTA= "$$\\displaystyle y={A}x+{B}$$ <br/>";
-    private String CAJAS_RESPUESTA = "$$A=$${1:SHORTANSWER:=$RESPUESTA_A$} <br/> $$B=$${1:SHORTANSWER:=$RESPUESTA_B$} <br/> "
-            + "<span style=\"color: #ff0000; font-size: x-large;\"><strong>"
-            + "<script type=\"math/tex\">\\bullet</script> &nbsp;&nbsp;&nbsp; Los números $$A,B$$ en este orden "
-            + "y que dan solución correcta al ejercicio son: </strong></span>"
-            + " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-            +" {20:SHORTANSWER:=$RESPUESTA_A$,$RESPUESTA_B$"
-            + "}</center> <br>"
-            + "</center>";
-/**
- *
- */
+
+
     /**
      * El comentario que se pondrá a cada reactivo para etiquetarlo, el sufijo
      * sera el número de reactivo. Éste se insertará como un comentario html
@@ -152,6 +141,14 @@ public class GenTangentPointGraph implements GeneradorReactivoCloze {
         expresion = expresion.replace("$CONSTANTEH$", constanteH.toString());
         expresion = expresion.replace("+-", "-");
 
+        String CAJAS_RESPUESTA = "$$A=$${1:SHORTANSWER:=$RESPUESTA_A$} <br/> $$B=$${1:SHORTANSWER:=$RESPUESTA_B$} <br/> "
+                + "<span style=\"color: #ff0000; font-size: x-large;\"><strong>"
+                + "<script type=\"math/tex\">\\bullet</script> &nbsp;&nbsp;&nbsp; Los números $$A,B$$ en este orden "
+                + "y que dan solución correcta al ejercicio son: </strong></span>"
+                + " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                + " {20:SHORTANSWER:=$RESPUESTA_A$,$RESPUESTA_B$"
+                + "}</center> <br>"
+                + "</center>";
         reactivo = reactivo.replace("$RESPUESTAS$", CAJAS_RESPUESTA);
         reactivo = reactivo.replace("$RESPUESTA$", RESPUESTA);
         //cambiar el problema para punto  tangente

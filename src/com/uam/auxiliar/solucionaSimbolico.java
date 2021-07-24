@@ -62,7 +62,7 @@ public class solucionaSimbolico {
      * La función acomodaNotacion de Python se asegura de colocar paréntesis en la notación
      * de las derivadas, evitando ambigüedad. <p>
      * Se debería actualizar el código desde web y hacer automática la traducción
-     * @author Iván Gutierrez
+     *
      */
     private static final String DERIVADOR = "import sympy\n" +
             "import collections\n" +
@@ -1278,8 +1278,6 @@ public class solucionaSimbolico {
                 "salida.write(\"$$\\\\displaystyle u(x)=%s$$<br/><br/>\\n\" % latex(g))\n" +
                 "df = diff(f,u)\n" +
                 "dg = diff(g,x)\n" +
-//                "salida.write(\"$$\\\\displaystyle  \\\\frac{df}{du}=%s$$<br/><br/>\\n\" % latex(df))\n" +
-//                "salida.write(\"$$ $$\\n\")\n" +
                 "salida.write(\"$$\\\\displaystyle \\\\frac{df}{du}=%s$$<br/><br/>\\n\" % latex(df))\n" +
                 "salida.write(\"$$\\\\displaystyle \\\\frac{du}{dx}=%s$$<br/><br/>\\n\" % latex(dg))\n" +
                 "result = df*dg\n" +
@@ -1701,7 +1699,7 @@ public class solucionaSimbolico {
      * Regresa la solución en HTML. <p>
      * @param expresion String en LaTeX a derivar
      * @param x0 abscisa del punto de tangencia
-     * @param variableindep
+     * @param variableindep variable independiente, uusalmente 'x'
      * @return String con solución paso a paso en HTML
      * @author Iván Gutiérrez
      */
