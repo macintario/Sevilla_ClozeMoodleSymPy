@@ -26,7 +26,7 @@ public class GenSecondDerivative implements GeneradorReactivoCloze {
     /**
      * El nombre o ruta absoluta del archivo de salida.
      */
-    private static final String NOMBRE_ARCHIVO_SALIDA = "reactivos_Thomas_3_3ej33.xml";
+    private static final String NOMBRE_ARCHIVO_SALIDA = "Sevilla_step_by_step_second_derivative.xml";
 
     /**
      * El número de reactivos que se generarán y vaciarán al archivo de texto.
@@ -93,7 +93,7 @@ public class GenSecondDerivative implements GeneradorReactivoCloze {
      * $COMENTARIO$ en la plantilla del reactivo.
      *
      */
-    private static final String COMENTARIO_REACTIVO_PREFIJO = "Reactivo Thomas_3.3_Ej_33_";
+    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_2nd_deriv_SBS_";
     private static final String SEPARADOR_REACTIVOS = "\r\n";
 
     @Override

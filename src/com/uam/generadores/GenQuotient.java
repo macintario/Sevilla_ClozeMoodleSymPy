@@ -26,7 +26,7 @@ public class GenQuotient implements GeneradorReactivoCloze {
     /**
      * El nombre o ruta absoluta del archivo de salida.
      */
-    private static final String NOMBRE_ARCHIVO_SALIDA = "reactivos_cociente.xml";
+    private static final String NOMBRE_ARCHIVO_SALIDA = "Sevilla_step_by_step_quotient_differientiation.xml";
 
     /**
      * El número de reactivos que se generarán y vaciarán al archivo de texto.
@@ -89,7 +89,7 @@ public class GenQuotient implements GeneradorReactivoCloze {
      * $COMENTARIO$ en la plantilla del reactivo.
      *
      */
-    private static final String COMENTARIO_REACTIVO_PREFIJO = "Reactivo cociente_";
+    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevillla_Quotient_Derivative_SBS_";
     private static final String SEPARADOR_REACTIVOS = "\r\n";
 
     @Override

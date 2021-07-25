@@ -26,7 +26,7 @@ public class GenHorizontalTangents implements GeneradorReactivoCloze {
     /**
      * El nombre o ruta absoluta del archivo de salida.
      */
-    private static final String NOMBRE_ARCHIVO_SALIDA = "reactivos_tangentesHorizontalesGraficaSVG.xml";
+    private static final String NOMBRE_ARCHIVO_SALIDA = "Sevilla_step_by_step_horizontal_tangents_graph.xml";
 
     /**
      * El número de reactivos que se generarán y vaciarán al archivo de texto.
@@ -59,12 +59,7 @@ public class GenHorizontalTangents implements GeneradorReactivoCloze {
             "¿ Revisión de su ejercicio ? Escribirás en papel el procedimiento detallado que muestre cómo obtuviste tus respuestas. \n" +
             "</strong></span>";
 
-    //private static final int[] COTA_CONSTANTE_A = {-2, 2};
-    //private static final int[] COTA_CONSTANTE_B = {-2, 2};
-    //private static final int[] COTA_CONSTANTE_C = {-4, 4};
     private static final int[] COTA_CONSTANTE_D = {-5, 5};
-    //private static final int[] COTA_CONSTANTE_E = {2, 9};
-    //private static final int[] COTA_CONSTANTE_F = {2, 9};
     private static final int[] COTA_CONSTANTE_G = {3, 5};
     private static final int[] COTA_CONSTANTE_H = {2, 5};
     private static final int[] COTA_R = {-4, 4};
@@ -91,7 +86,7 @@ public class GenHorizontalTangents implements GeneradorReactivoCloze {
      * $COMENTARIO$ en la plantilla del reactivo.
      *
      */
-    private static final String COMENTARIO_REACTIVO_PREFIJO = "Reactivo tangentesHorizontalesGraficaSVG_";
+    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_Hor_Tan_SBS";
     private static final String SEPARADOR_REACTIVOS = "\r\n";
 
     @Override
@@ -183,7 +178,7 @@ public class GenHorizontalTangents implements GeneradorReactivoCloze {
         reactivo = reactivo.replace("$RESPUESTA_P$", respuestaP.toString());
         reactivo = reactivo.replace("1x", "x");
 
-        solucion = solucionaSimbolico.tangentesHorizontalesGraficaSVG(expresion, "x");
+        solucion = solucionaSimbolico.tangentesHorizontalesGraficaJSX(expresion, "x");
 
         reactivo = reactivo.replace("$SOLUCION$", solucion);
 

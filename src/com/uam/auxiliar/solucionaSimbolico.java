@@ -79,7 +79,6 @@ public class solucionaSimbolico {
             "from sympy import cos\n" +
             "from sympy import solve\n" +
             "from sympy.plotting import plot\n" +
-            "import seaborn as sns\n"+
             "\n" +
             "from contextlib import contextmanager\n" +
             "\n" +
@@ -901,84 +900,6 @@ public class solucionaSimbolico {
      * 2. Su iguala con cero y se resuelve.
      * 3. Con las soluciones se sustituye en la ecuación original para encontrar
      * los puntos.
-     * 4. Construye una gráfica SVG del problema y lo incluye en la solución
-     * @author Iván Gutiérrez
-     */
-    private static final String SOLVER_TANGENTE_HORIZONTAL_GRAFICA_SVG =
-            /* hay que instalar seaborn y matplotlib para que esta parte funcione bien*/
-            "salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, $VARIABLEIND$)))\n" +
-                    "solucion = print_html_steps(expr, $VARIABLEIND$)\n" +
-                    "solucion = acomodaNotacion(solucion)\n" +
-                    "salida.write(solucion)\n" +
-                    "sns.set()\n" +
-                    "sns.set_style(\"whitegrid\", {'grid.linestyle': '--'})\n"+
-                    "grafica = plot(expr,(x,-50,50), show=False, line_color='blue')\n"+
-                    "xmin=1\n"+
-                    "xmax=-1\n"+
-                    "ymin=1\n"+
-                    "ymax=-1\n"+
-                    "anotaciones = []\n"+
-                    "derivada = Derivative(expr)\n" +
-                    "derivada = derivada.doit()\n" +
-                    "anula = solve(derivada, x)\n" +
-                    "solucion = \"Resolviendo $$%s=0$$ obtenemos las raices<br/>\" % (latex(derivada))\n" +
-                    "n = 1\n" +
-                    "for x_0 in anula:\n" +
-                    "    solucion = solucion + \"$$x_%s=%s$$ <br/>\" % (n, latex(x_0))\n" +
-                    "    if x_0 > xmax: \n"+
-                    "       xmax = x_0+1\n"+
-                    "    if x_0 < xmin: \n"+
-                    "       xmin = x_0-1\n"+
-                    "    n = n+1\n" +
-                    "n = 1\n" +
-                    "solucion = solucion+\"Sustituyendo en $$%s$$, se obtienen los puntos:<br/>\"%(latex(expr))\n" +
-                    "for x_0 in anula:\n" +
-                    "    y = expr.subs(x, x_0)\n" +
-                    "    solucion = solucion + \"$$P_%s(%s,%s)$$<br/>\" % (n,latex(x_0), latex(y))\n" +
-                    "    if y > ymax:\n" +
-                    "       ymax = y+1\n" +
-                    "    if y < ymin:\n" +
-                    "       ymin = y-1\n"+
-                    "    tangente = plot(y,(x,-80,80),show=False, line_color='red')\n"+
-                    "    anotaciones.append({'xy': (x_0, y+.1), 'text': \"P\"+str(n)+\"(\"+str(float(x_0))+\",\"+str(float(y))+\")\"})\n"+
-                    "    grafica.extend(tangente)\n" +
-                    "    n = n+1\n" +
-                    "\n" +
-                    "intervalox = xmax-xmin\n" +
-                    "centrox = (xmax + xmin)/2\n" +
-                    "centroy = (ymax + ymin)/2\n" +
-                    "intervalo = ymax-ymin\n" +
-                    "if intervalox > intervalo:\n" +
-                    "    intervalo = intervalox\n" +
-                    "intervalo = intervalo*6/10\n" +
-                    "xmax=centrox+intervalo\n" +
-                    "xmin=centrox-intervalo\n" +
-                    "ymax=centroy+intervalo\n" +
-                    "ymin=centroy-intervalo\n" +
-                    "salida.write(solucion)\n"+
-                    "grafica.xlim=(float(xmin), float(xmax))\n"+
-                    "grafica.ylim=(float(ymin), float(ymax))\n"+
-                    "grafica.annotations = anotaciones\n"+
-                    "grafica.title = \"$y=\"+latex(simplify(expr))+\"$\"\n" +
-                    "grafica.ylabel = False\n"+
-                    "grafica.save('/tmp/grafica_$UUID$.svg')\n"+
-                    "aSVG = open('/tmp/grafica_$UUID$.svg','r')\n" +
-                    "svgLines = aSVG.readlines()\n" +
-                    "iniciaSVG=False\n" +
-                    "for linea in svgLines:\n" +
-                    "    if \"<SVG\" in linea or \"<svg\" in linea:\n" +
-                    "        iniciaSVG = True\n" +
-                    "    if iniciaSVG:\n" +
-                    "        salida.write(linea)\n" +
-                    "salida.write('<br>')\n"+
-                    "aSVG.close()\n"
-            ;
-    /**
-     * Scriplet para obtener la tangente horizontal.<p>
-     * 1. Se deriva la expresión.
-     * 2. Su iguala con cero y se resuelve.
-     * 3. Con las soluciones se sustituye en la ecuación original para encontrar
-     * los puntos.
      * 4. Construye una gráfica con el plug-in JSX (JavaScript) del problema y lo incluye en la solución
      * JSX Graphs funciona en JavaScript
      * ES NECESARIO INSTALAR EN EL SERVIDOR DE MOODLE EL PLUG-IN JSX
@@ -1746,7 +1667,7 @@ public class solucionaSimbolico {
      * @author Iván Gutiérrez
      */
     public static String tangentesHorizontalesGraficaSVG(String expresion, String variableindep){
-        String script = DERIVADOR+PARSER+ SOLVER_TANGENTE_HORIZONTAL_GRAFICA_SVG +CLOSER;
+        String script = DERIVADOR+PARSER+ SOLVER_TANGENTE_HORIZONTAL_GRAFICA_JSX +CLOSER;
         script = script.replace("$EXPRESION$", expresion);
         script = script.replace("$VARIABLEIND$", variableindep);
         String solucion = ejecutaPython(script);

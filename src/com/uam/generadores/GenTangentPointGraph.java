@@ -26,7 +26,7 @@ public class GenTangentPointGraph implements GeneradorReactivoCloze {
     /**
      * El nombre o ruta absoluta del archivo de salida.
      */
-    private static final String NOMBRE_ARCHIVO_SALIDA = "reactivos_tangente_punto_grafica.xml";
+    private static final String NOMBRE_ARCHIVO_SALIDA = "Sevilla_step_by_step_tangent_graph.xml";
 
     /**
      * El número de reactivos que se generarán y vaciarán al archivo de texto.
@@ -83,7 +83,7 @@ public class GenTangentPointGraph implements GeneradorReactivoCloze {
      * $COMENTARIO$ en la plantilla del reactivo.
      *
      */
-    private static final String COMENTARIO_REACTIVO_PREFIJO = "Reactivo tangente punto grafica_";
+    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_Tangent_Point_SBS_";
     private static final String SEPARADOR_REACTIVOS = "\r\n";
 
     @Override
