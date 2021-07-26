@@ -813,7 +813,6 @@ public class SolucionaSimbolico {
      * 3.- Se convierte la expresión en LaTeX an una expresión Sympy, definiendo "pi"
      * como un símbolo reconocible <p>
      * Se debe poder definir como símbolo otra variable diferente de "x" , como "t" por ejemplo
-     * @author Iván Gutierrez
      *
      */
     private static final String PARSER =                 "##MAIN##\n" +
@@ -834,65 +833,6 @@ public class SolucionaSimbolico {
                     "solucion=acomodaNotacion(solucion)\n"+
                     "salida.write(solucion)\n" ;
     /**
-     * Scriptlet para obtener la tangente a una curva en un punto
-     * <p>
-     * 1.-Se deriva la expresión, como en el scriptlet del SOLVER,
-     * escribiendo el procedimiento en el archivo de salida.
-     * <p>
-     * 2.-Se evalúa la derivada en el punto solicitado y se escribe la solución.
-     */
-    private static final String SOLVER_RECTA_TANGENTE =
-            "x0 = $X0$\n"
-                    +"salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, x)))\n"
-                    +"solucion = print_html_steps(expr, $VARIABLEIND$)\n"
-                    +"solucion = acomodaNotacion(solucion)\n"
-                    +"salida.write(solucion)\n"
-                    +"derivada = Derivative(expr)\n"
-                    +"y_0 = expr.subs(x, x0)\n"
-                    +"yp_0 = derivada.subs(x, x0)\n"
-                    +"salida.write(\"\\n Evaluamos en $$x_{0}=$X0$ $$\\n<br/><br/>\")\n"
-                    + "salida.write(\" Sustituyendo en $$f(x)$$ el valor de $$x_{0}$$<br/><center>$$f(x_{0})=%s$$</center> \\n<br/><br/>\" % latex(y_0))\n" +
-                    "solucion=\"Sustituyendo en $$f'(x)$$ el valor de $$x_{0}$$<br/><center>$$f'(x_{0})=%s=%s$$</center> \\n<br/><br/>\" % (latex(yp_0), latex(yp_0.doit()))\n" +
-                    "solucion=solucion.replace(\"+-\",\"-\")\n" +
-                    "solucion = solucion.replace(\"--\",\"+\")\n" +
-                    "salida.write(solucion)\n"
-                    +"salida.write(\"Sustituyendo en la ecuación de la recta $$y-f(x_{0})=f'(x_{0})(x-x_{0})$$ obtenemos:\\n<br/><center>$$y-(%s)=(%s)(x-(%s))$$ </center>\\n<br/>\" % (\n"
-                    +"latex(y_0.doit()), latex(yp_0.doit()), x0))\n"
-                    +"solucion=\"Simplificando:\\n<br/><center>$$y=%sx+%s$$</center><br/><br/>\"%(latex(yp_0.doit()),latex(y_0.doit()-yp_0.doit()*x0))\n"
-                    +"solucion=solucion.replace(\"+-\",\"-\")\n"
-                    +"salida.write(solucion)\n"
-            ;
-    /**
-     * Scriplet para obtener la tangente horizontal.<p>
-     * 1. Se deriva la expresión.
-     * 2. Su iguala con cero y se resuelve.
-     * 3. Con las soluciones se sustituye en la ecuación original para encontrar
-     * los puntos.
-     * @author Iván Gutiérrez
-     */
-    private static final String SOLVER_TANGENTE_HORIZONTAL =
-            "salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr, $VARIABLEIND$)))\n" +
-                    "solucion = print_html_steps(expr, $VARIABLEIND$)\n" +
-                    "solucion = acomodaNotacion(solucion)\n" +
-                    "salida.write(solucion)\n" +
-                    "derivada = Derivative(expr)\n" +
-                    "derivada = derivada.doit()\n" +
-                    "anula = solve(derivada, $VARIABLEIND$)\n" +
-                    "solucion = \"Resolviendo $$%s=0$$ obtenemos las raices<br/>\" % (latex(derivada))\n" +
-                    "n = 1\n" +
-                    "for x_0 in anula:\n" +
-                    "    solucion = solucion + \"$$x_%s=%s$$ <br/>\" % (n, latex(x_0))\n" +
-                    "    n = n+1\n" +
-                    "n = 1\n" +
-                    "solucion = solucion+\"Sustituyendo en $$%s$$, se obtienen los puntos:<br/>\"%(latex(expr))\n" +
-                    "for x_0 in anula:\n" +
-                    "    y = expr.subs(x, x_0)\n" +
-                    "    solucion = solucion + \"$$P_%s(%s,%s)$$<br/>\" % (n,latex(x_0), latex(y))\n" +
-                    "    n = n+1\n" +
-                    "\n" +
-                    "salida.write(solucion)\n"
-            ;
-    /**
      * Scriplet para obtener la tangente horizontal.<p>
      * 1. Se deriva la expresión.
      * 2. Su iguala con cero y se resuelve.
@@ -901,7 +841,6 @@ public class SolucionaSimbolico {
      * 4. Construye una gráfica con el plug-in JSX (JavaScript) del problema y lo incluye en la solución
      * JSX Graphs funciona en JavaScript
      * ES NECESARIO INSTALAR EN EL SERVIDOR DE MOODLE EL PLUG-IN JSX
-     * @author Iván Gutiérrez
      */
     private static final String SOLVER_TANGENTE_HORIZONTAL_GRAFICA_JSX =
             /* hay que instalar seaborn y matplotlib para que esta parte funcione bien*/
@@ -970,7 +909,6 @@ public class SolucionaSimbolico {
      * <p>
      * 2.-Se evalúa la derivada en el punto solicitado y se escribe la solución.
      * 3.-Se genera grafica SVG
-     * @author Iván Gutiérrez
      */
     private static final String SOLVER_RECTA_TANGENTE_GRAFICA =
             "x0 = $X0$\n"
@@ -1015,7 +953,6 @@ public class SolucionaSimbolico {
     /**
      * Scriptlet de Python para efectuar derivadas sucesivas.
      * Se concatena sucesivamente para obtener derivadas de mayor orden
-     * @author Iván Gutiérrez
      */
     private static final String DIFF_STEP =
             "derivada = Derivative(expr)\n"+
@@ -1029,7 +966,6 @@ public class SolucionaSimbolico {
      * Cierra el archivo en el que se escribe la salida.
      * Debe ser el último elemento que se concatena para
      * armar un script con los scriptlets previos
-     * @author Iván Gutiérrez
      */
     private static final String CLOSER      =                      "salida.close()\n";
 
@@ -1066,7 +1002,7 @@ public class SolucionaSimbolico {
                     System.out.println("Python: " + line);
                 }
             } catch (IOException e) {
-                System.out.println("Exception in reading output" + e.toString());
+                System.out.println("Exception in reading output" + e);
             }
             int exitVal = p.waitFor();
             if (exitVal == 0) System.out.println("Ok");
@@ -1092,466 +1028,6 @@ public class SolucionaSimbolico {
     }
 
     /**
-     * Hace derivación simbólica de la expresión usando el límite que tiende a cero del incremento
-     *
-     * @param expresion cadena en LaTex con expresión para derivar
-     * @return cadena con el proceso de derivación usando el método del incremento que tiende a cero
-     * @see "Cálculo de una Variable, Thomas 12a. Edición cap 3.2"
-     * @author Iván Gutiérrez
-     */
-    public static String incremento(String expresion) {
-        String PLANTILLA_SYMPY =
-                "from sympy import *\n" +
-                        "from sympy.parsing.latex import parse_latex\n" +
-                        "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-                        "init_printing()\n" +
-                        "x = var('x')\n" +
-                        "h = var('h')\n" +
-                        "f = parse_latex(r\" $EXPRESION$ \")\n" +
-                        "fh=f.subs(x,x+h)\n" +
-                        "drv=(fh-f)/h\n" +
-                        "salida.write(\"$$\\\\displaystyle f(x)=%s$$<br/><br/>\\n\" %(latex(f)))\n" +
-                        "salida.write(\"$$\\\\displaystyle f(x+h)=%s$$<br/><br/>\\n\" %latex(fh))\n" +
-                        "salida.write(\"$$\\\\displaystyle \\\\frac{f(x+h)-f(x)}{h}=%s=%s $$\\n <br/><br/>\" % (latex(drv),latex(drv.factor())))\n" +
-                        "drv=limit(drv,h,0)\n" +
-                        "resultado=drv.apart()\n" +
-                        "salida.write(\"$$\\\\displaystyle f'(x)=\\\\lim_{h\\\\to 0} \\\\frac{f(x+h)-f(x)}{h}=%s=%s$$<br/><br/>\\n\" % (latex(drv),latex(resultado)))";
-
-        String script = PLANTILLA_SYMPY;
-        script = script.replace("$EXPRESION$", expresion);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
-     * Deriva simbólicamente expresiones algebráicas en LaTex usando el método de limite que tiende a cero y
-     * empleando además la multiplicación por el conjugado del incremento para eliminar la ideterminación
-     *
-     * @param expresion cadena en LaTex con expresión para derivar
-     * @return cadena con el proceso de derivación usando el método del incremento que tiende a cero
-     * @see "Cálculo de una Variable, Thomas 12a. Edición cap 3.2"
-     * @author Iván Gutiérrez
-     */
-    public static String solucionaSimbolicoConjugados(String expresion) {
-        String PLANTILLA_SYMPY =
-                "from sympy import *\n" +
-                        "from sympy.parsing.latex import parse_latex\n" +
-                        "\n" +
-                        "salida = open(\"/tmp/solucion_$UUID$.txt\", \"w\")\n" +
-                        "init_printing()\n" +
-                        "x = var('x')\n" +
-                        "h = var('h')\n" +
-                        "f = parse_latex(r\"$EXPRESION$ \")\n" +
-                        "fh = f.subs(x, x + h)\n" +
-                        "drv = (fh - f) / h\n" +
-                        "salida.write(\"$$\\\\displaystyle f(x)=%s$$<br/><br/>\\n\" % (latex(f)))\n" +
-                        "salida.write(\"$$\\\\displaystyle f(x+h)=%s$$<br/><br/>\\n\" % latex(fh))\n" +
-                        "salida.write(\"$$\\\\displaystyle \\\\frac{f(x+h)-f(x)}{h}=%s=%s $$\\n <br/><br/>Multiplicando por el conjugado<br/><br/>\" % (latex(drv), latex(drv.simplify())))\n" +
-                        "recipr = 1 / f\n" +
-                        "reciprh = 1 / fh\n" +
-                        "conjugado = recipr + reciprh\n" +
-                        "numerador = ( fh - f ) * conjugado\n" +
-                        "denominador = recipr * reciprh\n" +
-                        "nuevoNumerador = numerador.simplify()\n" +
-                        "salida.write(\"$$\\\\displaystyle = %s \\\\frac{%s}{%s}$$<br/><br/>\\n\" % (latex(drv), latex(conjugado), latex(conjugado)));\n" +
-                        "salida.write(\n" +
-                        "    \"$$\\\\displaystyle = \\\\frac{1}{%s({%s})} %s$$<br/><br/>\\n\" % (latex(h), latex(conjugado), latex((fh - f) * conjugado)));\n" +
-                        "salida.write(\"$$\\\\displaystyle numerador: %s=%s$$<br/><br/>\\n\" % (latex(numerador), latex(numerador.simplify())));\n" +
-                        "salida.write(\"$$\\\\displaystyle simplificando: \\\\frac{f(x+h)-f(x)}{h}=\\\\frac{%s}{h}*\\\\frac{1}{%s} $$<br/><br/>\\n\" % (\n" +
-                        "latex(nuevoNumerador), latex(conjugado)));\n" +
-                        "drv = nuevoNumerador / h / conjugado\n" +
-                        "limite = limit(drv, h, 0)\n" +
-                        "salida.write(\"$$\\\\displaystyle f'(x)=\\\\lim_{h\\\\to 0} \\\\frac{f(x+h)-f(x)}{h}=\\\\lim_{h\\\\to 0}%s=%s$$<br/><br/>\\n\" % (latex(drv), latex(limite.simplify())))\n";
-        String script = PLANTILLA_SYMPY;
-        script = script.replace("$EXPRESION$", expresion);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
-     * Deriva simbólicamente expresiones algebráicas en LaTex usando la regla de la cadena
-     * se escoge una variable de sustitucion \f$u\f$
-     * y se ponen las expresiones en términos de \f$f(u)\f$ y \f$u=g(x)\f$
-     *
-     * @param fu función de la variable de sustitución  (u)
-     * @param gx función de la variable original (x)
-     * @return cadena con el proceso de derivación usando la regla de la cadena
-     * @see "Cálculo de una Variable, Thomas 12a. Edición cap 3.6"
-     * @author Iván Gutiérrez
-     * @deprecated derivaSimbolico puede sustituir a esta función.
-     */
-
-    public static String reglaCadena(String fu, String gx) {
-        String PLANTILLA_SYMPY = "from sympy import *\n" +
-                "from sympy.parsing.latex import parse_latex\n" +
-                "\n" +
-                "\n" +
-                "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-                "init_printing()\n" +
-                "x = var('x')\n" +
-                "u = var('u')\n" +
-                "f = parse_latex(r\"$FU$\")\n" +
-                "g = parse_latex(r\"$GX$\")\n" +
-                "salida.write(\"$$\\\\displaystyle f(x)=%s$$<br/><br/>\\n\" % latex(f.subs(u,g)))\n" +
-                "salida.write(\"$$\\\\displaystyle f(u)=%s$$<br/><br/>\\n\" % latex(f))\n" +
-                "salida.write(\"$$\\\\displaystyle u(x)=%s$$<br/><br/>\\n\" % latex(g))\n" +
-                "df = diff(f,u)\n" +
-                "dg = diff(g,x)\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{du}=%s$$<br/><br/>\\n\" % latex(df))\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{du}{dx}=%s$$<br/><br/>\\n\" % latex(dg))\n" +
-                "result = df*dg\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{du}\\\\frac{du}{dx} = %s$$<br/><br/>\\n\" % latex(result))\n" +
-                "result = result.subs(u,g)\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{dx}=%s=%s$$<br/><br/>\\n\" % (latex(result), latex(result.cancel())))\n" +
-                "salida.close()";
-        String script = PLANTILLA_SYMPY;
-        script = script.replace("$FU$", fu);
-        script = script.replace("$GX$", gx);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
-     * Deriva simbólicamente expresiones algebráicas en LaTex usando la regla de la cadena
-     * se escoge una variable de sustitucion "u" y se ponen las expresiones en términos de f(u) y u(x)=g(x).
-     * A diferencia del método reglaCadena evita una simplificación al final
-     *
-     * @param fu función de la variable de sustitución  (u)
-     * @param gx función de la variable original (x)
-     * @return cadena con el proceso de derivación usando la regla de la cadena
-     * @see class reglaCadena
-     * @deprecated derivaSimbolico puede sustituir a esta función.
-     */
-
-    public static String reglaCadenaNoCancel(String fu, String gx) {
-
-        String PLANTILLA_SYMPY = "from sympy import *\n" +
-                "from sympy.parsing.latex import parse_latex\n" +
-                "\n" +
-                "\n" +
-                "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-                "init_printing()\n" +
-                "x = var('x')\n" +
-                "u = var('u')\n" +
-                "f = parse_latex(r\"$FU$\")\n" +
-                "g = parse_latex(r\"$GX$\")\n" +
-                "salida.write(\"$$\\\\displaystyle f(x)=%s$$<br/><br/>\\n\" % latex(f.subs(u,g)))\n" +
-                "salida.write(\"$$\\\\displaystyle f(u)=%s$$<br/><br/>\\n\" % latex(f))\n" +
-                "salida.write(\"$$\\\\displaystyle u(x)=%s$$<br/><br/>\\n\" % latex(g))\n" +
-                "df = diff(f,u)\n" +
-                "dg = diff(g,x)\n" +
-//                "salida.write(\"$$\\\\displaystyle  \\\\frac{df}{du}=%s$$<br/><br/>\\n\" % latex(df))\n" +
-//                "salida.write(\"$$ $$\\n\")\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{du}=%s$$<br/><br/>\\n\" % latex(df))\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{du}{dx}=%s$$<br/><br/>\\n\" % latex(dg))\n" +
-                "result = df*dg\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{du}\\\\frac{du}{dx} = %s$$<br/><br/>\\n\" % latex(result))\n" +
-                "result = result.subs(u,g)\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{dx}=%s$$<br/><br/>\\n\" % (latex(result)))\n" +
-                "salida.close()";
-        String script = PLANTILLA_SYMPY;
-        script = script.replace("$FU$", fu);
-        script = script.replace("$GX$", gx);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
-     * reglaCadenaTrig deriva simbólicamente expresiones algebráicas en LaTex usando la regla de la cadena
-     * se escoge una variable de sustitucion "u" y se ponen las expresiones en términos de f(u) y u(x)=g(x).
-     * El método intenta hacer simplificación de expresiones trigonométricas
-     *
-     * @param fu función de la variable de sustitución  (u)
-     * @param gx función de la variable original (x)
-     * @return cadena con el proceso de derivación usando la regla de la cadena
-     * @see class reglaCadena
-     * @author Iván Gutiérrez
-     * @deprecated derivaSimbolico puede sustituir a esta función.
-     */
-    public static String reglaCadenaTrig(String fu, String gx) {
-
-        String PLANTILLA_SYMPY = "from sympy import *\n" +
-                "from sympy.parsing.latex import parse_latex\n" +
-                "\n" +
-                "\n" +
-                "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-                "init_printing()\n" +
-                "x = var('x')\n" +
-                "u = var('u')\n" +
-                "f = parse_latex(r\"$FU$\")\n" +
-                "g = parse_latex(r\"$GX$\")\n" +
-                "salida.write(\"$$\\\\displaystyle f(x)=%s$$<br/><br/>\\n\" % latex(f.subs(u,g)))\n" +
-                "salida.write(\"$$\\\\displaystyle f(u)=%s$$<br/><br/>\\n\" % latex(f))\n" +
-                "salida.write(\"$$\\\\displaystyle u(x)=%s$$<br/><br/>\\n\" % latex(g))\n" +
-                "df = diff(f,u)\n" +
-                "dg = diff(g,x)\n" +
-//                "salida.write(\"$$\\\\displaystyle  \\\\frac{df}{du}=%s$$<br/><br/>\\n\" % latex(df))\n" +
-//                "salida.write(\"$$ $$\\n\")\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{du}=%s$$<br/><br/>\\n\" % latex(df))\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{du}{dx}=%s$$<br/><br/>\\n\" % latex(dg))\n" +
-                "result = df*dg\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{du}\\\\frac{du}{dx} = %s$$<br/><br/>\\n\" % latex(result))\n" +
-                "result = result.subs(u,g)\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{dx}=%s=%s$$<br/><br/>\\n\" % (latex(result), latex(trigsimp(result))))\n" +
-                "salida.close()";
-        String script = PLANTILLA_SYMPY;
-        script = script.replace("$FU$", fu);
-        script = script.replace("$GX$", gx);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
-     * Deriva simbólicamente expresiones algebráicas en LaTex usando la regla de la cadena para una suma
-     * de dos productos.
-     * Se escoge una variable de sustitucion "u" y se ponen las expresiones en términos de f(u) y u(x)=g(x) para el primer sumando.
-     * Se escoge una variable de sustitucion "v" y se ponen las expresiones en términos de h(v) y v(x)=j(x) para el segundo sumando.
-     * El método muestra los pasos de derivación con la regla de la cadena para cada sumando y efectúa la suma sibólica
-     *
-     * @param fu función de la variable de sustitución  (u)
-     * @param gx función de la variable original (x)
-     * @param hv función de la variable de sustitución  (u)
-     * @param jx función de la variable original (x)
-     * @return cadena con el proceso de derivación usando la regla de la cadena
-     * @see class reglaCadena
-     * @author Iván Gutiérrez
-     * @deprecated derivaSimbolico puede sustituir a esta función.
-     */
-    public static String sumaReglaCadena(String fu, String gx, String hv, String jx) {
-        String PLANTILLA_SYMPY = "from sympy import *\n" +
-                "from sympy.parsing.latex import parse_latex\n" +
-                "\n" +
-                "\n" +
-                "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-                "init_printing()\n" +
-                "x = var('x')\n" +
-                "u = var('u')\n" +
-                "v = var('v')\n" +
-                "f = parse_latex(r\"$FU$\")\n" +
-                "g = parse_latex(r\"$GX$\")\n" +
-                "h = parse_latex(r\"$HV$\")\n" +
-                "j = parse_latex(r\"$JX$\")\n" +
-                "salida.write(\"$$\\\\displaystyle f(x)=%s$$<br/><br/>\\n\" % latex(f.subs(u,g)+h.subs(v,j)))\n" +
-                "salida.write(\"$$\\\\displaystyle f(u)=%s$$<br/><br/>\\n\" % latex(f))\n" +
-                "salida.write(\"$$\\\\displaystyle u(x)=%s$$<br/><br/>\\n\" % latex(g))\n" +
-                "salida.write(\"$$\\\\displaystyle g(v)=%s$$<br/><br/>\\n\" % latex(h))\n" +
-                "salida.write(\"$$\\\\displaystyle v(x)=%s$$<br/><br/>\\n\" % latex(j))\n" +
-                "df = diff(f,u)\n" +
-                "dg = diff(g,x)\n" +
-                "dh = diff(h,v)\n" +
-                "dj = diff(j,x)\n" +
-//                "salida.write(\"$$\\\\displaystyle  \\\\frac{df}{du}=%s$$<br/><br/>\\n\" % latex(df))\n" +
-//                "salida.write(\"$$ $$\\n\")\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{du}=%s$$<br/><br/>\\n\" % latex(df))\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{du}{dx}=%s$$<br/><br/>\\n\" % latex(dg))\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{dg}{dv}=%s$$<br/><br/>\\n\" % latex(dh))\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{dv}{dx}=%s$$<br/><br/>\\n\" % latex(dj))\n" +
-                "result = df*dg+dh*dj\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{du}\\\\frac{du}{dx}+ \\\\frac{dg}{dv}\\\\frac{dv}{dx} = %s$$<br/><br/>\\n\" % latex(result))\n" +
-                "result = result.subs(u,g)\n" +
-                "result = result.subs(v,j)\n" +
-                "salida.write(\"$$\\\\displaystyle \\\\frac{df}{dx}=%s=%s$$<br/><br/>\\n\" % (latex(result), latex(result.cancel())))\n" +
-                "salida.close()";
-        String script = PLANTILLA_SYMPY;
-
-        script = script.replace("$FU$", fu);
-        script = script.replace("$GX$", gx);
-        script = script.replace("$HV$", hv);
-        script = script.replace("$JX$", jx);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
-     *  Deriva simbólicamente de la suma de dos productos
-     *  de la forma \f$y = uv + wz\f$.
-     * @param u primer factor del primer sumando como función de x
-     * @param v segundo factor del primer sumando como función de x
-     * @param w primer factor del segundo sumando como función de x
-     * @param z segundo factor del segundo sumando como función de x
-     * @return String con la derivada.
-     * @deprecated derivaSimbolico puede sustituir a esta función.
-     * @author Iván Gutiérrez
-     */
-    public static String sumaProductosCadena(String u, String v, String w, String z){
-        String PLANTILLA_SYMPY = "from sympy import *\n" +
-                "from sympy.parsing.latex import parse_latex\n" +
-                "#Solución a derivada de y=uv+wz\n" +
-                "\n" +
-                "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-                "init_printing()\n" +
-                "x = var('x')\n" +
-                "u = var('u')\n" +
-                "v = var('v')\n" +
-                "w = var('w')\n" +
-                "z = var('z')\n" +
-                "u = parse_latex(r\"$U$\")\n" +
-                "v = parse_latex(r\"$V$\")\n" +
-                "w = parse_latex(r\"$W$\")\n" +
-                "z = parse_latex(r\"$Z$\")\n" +
-                "du = diff(u)\n" +
-                "dv = diff(v)\n" +
-                "dw = diff(w)\n" +
-                "dz = diff(z)\n" +
-                "salida.write(\"$$y=%s$$<br/><br/>\\n\" % latex(u*v+w*z))\n" +
-                "salida.write(\"$$u=%s$$<br/><br/>\\n\" % latex(u))\n" +
-                "salida.write(\"$$v=%s$$<br/><br/>\\n\" % latex(v))\n" +
-                "salida.write(\"$$w=%s$$<br/><br/>\\n\" % latex(w))\n" +
-                "salida.write(\"$$z=%s$$<br/><br/><br/>\\n\" % latex(z))\n" +
-                "salida.write(\"$$u'=%s$$<br/><br/>\\n\" % latex(du))\n" +
-                "salida.write(\"$$v'=%s$$<br/><br/>\\n\" % latex(dv))\n" +
-                "salida.write(\"$$w'=%s$$<br/><br/>\\n\" % latex(dw))\n" +
-                "salida.write(\"$$z'=%s$$<br/><br/><br/>\\n\" % latex(dz))\n" +
-                "result = du*v+dv*u+dw*z+dz*w\n" +
-                "salida.write(\"$$y'=(u\\'v+v\\'u)+(w\\'z+z\\'w)$$<br/><br/>\\n\")\n" +
-                "salida.write(\"$$y'=[(%s) (%s) +(%s) (%s)]+[(%s) (%s)]+[(%s)(%s)]$$<br/><br/>\\n\"% ( latex(du), latex(v),latex(dv), latex(u), latex(dw), latex(z),latex(dz), latex(w) ) )\n" +
-                "salida.write(\"$$y'=%s$$<br/>\\n\" % latex(result))\n" +
-                "salida.close()"
-                ;
-        String script = PLANTILLA_SYMPY;
-        script = script.replace("$U$", u);
-        script = script.replace("$V$", v);
-        script = script.replace("$W$", w);
-        script = script.replace("$Z$", z);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
-     *  Deriva simbólicamente la suma de dos protencias
-     *  de la forma \f$y = au^n+v^m\f$.
-     * @param a coeficiente del primer sumando como función de x
-     * @param ux segundo factor del primer sumando como función de x
-     * @param n potencia del primer sumando
-     * @param vx segundo sumando como función de x
-     * @param m potencia del segundo sumando como función de x
-     * @return String con la derivada.
-     * @deprecated derivaSimbolico puede sustituir a esta función.
-     * @author Iván Gutiérrez
-     */
-
-    public static String sumaPotenciasCadena(String a, String ux, String n, String vx, String m){
-        String PLANTILLA_SYMPY = "from sympy import *\n" +
-                "from sympy.parsing.latex import parse_latex\n" +
-                "#Solución a derivada de y=uv+wz\n" +
-                "\n" +
-                "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-                "init_printing()\n" +
-                "x = var('x')\n" +
-                "a = var('a')\n" +
-                "u = var('u',commutative=false)\n" +
-                "n = var('n')\n" +
-                "v = var('v')\n" +
-                "m = var('m')\n" +
-                "a = UnevaluatedExpr(parse_latex(r\"$A$\"))\n" +
-                "ux = parse_latex(r\"$UX$\",)\n" +
-                "n = $N$\n" +
-                "vx = parse_latex(r\"$VX$\")\n" +
-                "m = $M$\n" +
-                "f1 = u ** n\n" +
-                "f2 = v ** m\n" +
-                "fx = a*ux ** n + vx ** m\n" +
-                "salida.write(\"$$f(x)=%s$$<br><br>\\n\" % latex(fx))\n" +
-                "# u(x)\n" +
-                "salida.write(\"$$u(x)=%s$$<br><br>\\n\" % latex(ux))\n" +
-                "dfu = diff(a*u ** n,u).doit()\n" +
-                "salida.write(\"$$\\\\frac{d}{du}(%s)=%s=%s$$<br><br>\\n\" % (latex(a*u ** n), latex(a*diff(u**n)), latex(dfu)))\n" +
-                "dux = diff(ux)\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=%s$$<br><br>\\n\" % (latex(ux), latex(dux)))\n" +
-                "df1 = dfu * dux\n" +
-                "salida.write(\"$$\\\\frac{d}{du}\\\\frac{du}{dx}=%s$$<br><br>\\n\" % latex(df1))\n" +
-                "df1 = df1.subs(u, ux)\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=%s$$<br><br>\\n\" % (latex(f1.subs(u, ux)), latex(df1)))\n" +
-                "# v(x)\n" +
-                "salida.write(\"$$v(x)=%s$$<br><br>\\n\" % latex(vx))\n" +
-                "dfv = diff(v ** m)\n" +
-                "salida.write(\"$$\\\\frac{d}{dv}(%s)=%s$$<br><br>\\n\" % (latex(v ** m), latex(dfv)))\n" +
-                "dvx = diff(vx)\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=%s$$<br><br>\\n\" % (latex(vx), latex(dvx)))\n" +
-                "df2 = dfv * dvx\n" +
-                "salida.write(\"$$\\\\frac{d}{du}\\\\frac{du}{dx}=%s$$<br><br>\\n\" % latex(df2))\n" +
-                "df2 = df2.subs(v, vx)\n" +
-                "\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=%s$$<br><br>\\n\" % (latex(f2.subs(v, vx)), latex(df2)))\n" +
-                "\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=%s$$<br><br>\\n\" % (latex(fx), latex(df1.factor() + df2.factor())))\n"+
-                "salida.close()"
-                ;
-        String script = PLANTILLA_SYMPY;
-        script = script.replace("$UX$", ux);
-        script = script.replace("$VX$", vx);
-        script = script.replace("$N$", n);
-        script = script.replace("$M$", m);
-        script = script.replace("$A$", a);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
-     *  Deriva simbólicamente el producto de dos protencias
-     *  de la forma \f$y = u^n*v^m\f$
-     * @param ux primer factor como función de x
-     * @param n potencia del primer factor
-     * @param vx segundo factor como función de x
-     * @param m potencia del segundo sumando como función de x
-     * @return String con la derivada.
-     * @deprecated derivaSimbolico puede sustituir a esta función.
-     * @author Iván Gutiérrez
-     */
-    public static String productoPotenciasCadena(String ux, String n, String vx, String m){
-        String PLANTILLA_SYMPY = "from sympy import *\n" +
-                "from sympy.parsing.latex import parse_latex\n" +
-                "#Solución a derivada de y=u^n*v^m\n" +
-                "\n" +
-                "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-                "init_printing()\n" +
-                "x = var('x')\n" +
-                "u = var('u')\n" +
-                "n = var('n')\n" +
-                "v = var('v')\n" +
-                "m = var('m')\n" +
-                "ux = parse_latex(r\"$UX$\")\n" +
-                "n = $N$\n" +
-                "vx = parse_latex(r\"$VX$\")\n" +
-                "m = $M$\n" +
-                "f1 = u ** n\n" +
-                "f2 = v ** m\n" +
-                "fx = ux ** n * vx ** m\n" +
-                "salida.write(\"$$f(x)=%s$$<br><br>\\n\" % latex(fx))\n" +
-                "# u(x)\n" +
-                "salida.write(\"$$u(x)=%s$$<br><br>\\n\" % latex(ux))\n" +
-                "dfu = diff(u ** n)\n" +
-                "salida.write(\"$$\\\\frac{d}{du}(%s)=%s$$<br><br>\\n\" % (latex(u ** n), latex(dfu)))\n" +
-                "dux = diff(ux)\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=%s$$<br><br>\\n\" % (latex(ux), latex(dux)))\n" +
-                "df1 = dfu * dux\n" +
-                "salida.write(\"$$\\\\frac{d}{du}\\\\frac{du}{dx}=%s$$<br><br>\\n\" % latex(df1))\n" +
-                "df1 = df1.subs(u, ux)\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=%s$$<br><br>\\n\" % (latex(f1.subs(u, ux)), latex(df1)))\n" +
-                "# v(x)\n" +
-                "salida.write(\"$$v(x)=%s$$<br><br>\\n\" % latex(vx))\n" +
-                "dfv = diff(v ** m)\n" +
-                "salida.write(\"$$\\\\frac{d}{dv}(%s)=%s$$<br><br>\\n\" % (latex(v ** m), latex(dfv)))\n" +
-                "dvx = diff(vx)\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=%s$$<br><br>\\n\" % (latex(vx), latex(dvx)))\n" +
-                "df2 = dfv * dvx\n" +
-                "salida.write(\"$$\\\\frac{d}{du}\\\\frac{du}{dx}=%s$$<br><br>\\n\" % latex(df2))\n" +
-                "df2 = df2.subs(v, vx)\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=%s$$<br><br>\\n\" % (latex(f2.subs(v, vx)), latex(df2)))\n" +
-                "\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(u^{n}(x) v^{m}(x))=v^{m}(x) nu^{n-1}(x)\\\\frac{du}{dx} + u^{n}(x)mv^{m-1}(x)\\\\frac{dv}{dx}$$<br><br>\\n\")\n" +
-                "salida.write(\"$$\\\\frac{d}{dx}(%s)=[(%s)(%s)]+[(%s)(%s)]=%s$$<br><br>\\n\" % (latex(fx),latex(df1),latex(vx**m), latex(df2), latex(ux**n), latex(df1*vx**m + cancel(df2*ux**n))))\n"
-                ;
-        String script = PLANTILLA_SYMPY;
-        script = script.replace("$UX$", ux);
-        script = script.replace("$VX$", vx);
-        script = script.replace("$N$", n);
-        script = script.replace("$M$", m);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
      * Deriva funciones de "x", regresa la derivación paso a paso.<p>
      * Construye un script Python con los scriptlets DERIVADOR,PARSER,SOLVER y CLOSER.<p>
      * Sustituye en el script la expresión en LaTeX pasada como parámetro.<p>
@@ -1566,8 +1042,7 @@ public class SolucionaSimbolico {
         String script = DERIVADOR+PARSER+SOLVER+CLOSER;
         script = script.replace("$EXPRESION$", expresion);
         script = script.replace("$VARIABLEIND$", variableindep);
-        String solucion = ejecutaPython(script);
-        return solucion;
+        return ejecutaPython(script);
     }
 
     /**
@@ -1577,7 +1052,7 @@ public class SolucionaSimbolico {
      * Ejecuta el script. <p>
      * Regresa la solución en HTML. <p>
      * @param expresion String en LaTeX a derivar
-     * @param variableindep
+     * @param variableindep usualmente 'x'
      * @return String con solución paso a paso en HTML
      * @author Iván Gutiérrez
      */
@@ -1585,30 +1060,9 @@ public class SolucionaSimbolico {
         String script = DERIVADOR+PARSER+SOLVER+DIFF_STEP+CLOSER;
         script = script.replace("$EXPRESION$", expresion);
         script = script.replace("$VARIABLEIND$", variableindep);
-        String solucion = ejecutaPython(script);
-        return solucion;
+        return ejecutaPython(script);
     }
-    /**
-     * Encuentra la recta tangente a funciones \f$f(x)\f$ en un punto \f$x_0\f$<p>
-     * Regresa la derivación paso a paso y la ecuación de la recta.<p>
-     * Construye un script Python con los scriptlets DERIVADOR,PARSER,SOLVER_RECTA_TANGENTE y CLOSER.<p>
-     * Sustituye en el script la expresión en LaTeX pasada como parámetro.<p>
-     * Ejecuta el script. <p>
-     * Regresa la solución en HTML. <p>
-     * @param expresion String en LaTeX a derivar
-     * @param x0 abscisa del punto de tangencia
-     * @param variableindep
-     * @return String con solución paso a paso en HTML
-     * @author Iván Gutiérrez
-     */
-    public static String rectaTangente(String expresion, Integer x0, String variableindep){
-        String script = DERIVADOR+PARSER+SOLVER_RECTA_TANGENTE+CLOSER;
-        script = script.replace("$EXPRESION$", expresion);
-        script = script.replace("$VARIABLEIND$", variableindep);
-        script = script.replace("$X0$", x0.toString());
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
+
     /**
      * Encuentra la recta tangente a funciones \f$f(x)\f$ en un punto \f$x_0\f$<p>
      * Regresa la derivación paso a paso y la ecuación de la recta.<p>
@@ -1627,50 +1081,9 @@ public class SolucionaSimbolico {
         script = script.replace("$EXPRESION$", expresion);
         script = script.replace("$VARIABLEIND$", variableindep);
         script = script.replace("$X0$", x0.toString());
-        String solucion = ejecutaPython(script);
-        return solucion;
+        return ejecutaPython(script);
     }
 
-    /**
-     * Encuentra las rectas tangentes horizontales \f$f(x)\f$<p>
-     * Regresa la derivación paso a paso y la ecuación de la recta.<p>
-     * Construye un script Python con los scriptlets DERIVADOR,PARSER,SOLVER_TANGENTE_HORIZONTAL y CLOSER.<p>
-     * Sustituye en el script la expresión en LaTeX pasada como parámetro.<p>
-     * Ejecuta el script. <p>
-     * Regresa la solución en HTML. <p>
-     * @param expresion String con función en LaTeX
-     * @param variableindep
-     * @return String en HTML con la solución paso a paso de la derivada
-     * y las ecuaciones de las rectas horizontales
-     * @author Iván Gutiérrez
-     */
-    public static String tangentesHorizontales(String expresion, String variableindep){
-        String script = DERIVADOR+PARSER+SOLVER_TANGENTE_HORIZONTAL+CLOSER;
-        script = script.replace("$EXPRESION$", expresion);
-        script = script.replace("$VARIABLEIND$", variableindep);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-    /**
-     * Encuentra las rectas tangentes horizontales \f$f(x)\f$<p>
-     * Regresa la derivación paso a paso y la ecuación de la recta.<p>
-     * Construye un script Python con los scriptlets DERIVADOR,PARSER,SOLVER_TANGENTE_HORIZONTAL_GRAFICA_SVG y CLOSER.<p>
-     * Sustituye en el script la expresión en LaTeX pasada como parámetro.<p>
-     * Ejecuta el script. <p>
-     * Regresa la solución en HTML. <p>
-     * @param expresion String con función en LaTeX
-     * @param variableindep
-     * @return String en HTML con la solución paso a paso de la derivada
-     * y las ecuaciones de las rectas horizontales
-     * @author Iván Gutiérrez
-     */
-    public static String tangentesHorizontalesGraficaSVG(String expresion, String variableindep){
-        String script = DERIVADOR+PARSER+ SOLVER_TANGENTE_HORIZONTAL_GRAFICA_JSX +CLOSER;
-        script = script.replace("$EXPRESION$", expresion);
-        script = script.replace("$VARIABLEIND$", variableindep);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
     /**
      * Encuentra las rectas tangentes horizontales \f$f(x)\f$<p>
      * Regresa la derivación paso a paso y la ecuación de la recta.<p>
@@ -1679,7 +1092,7 @@ public class SolucionaSimbolico {
      * Ejecuta el script. <p>
      * Regresa la solución en HTML. <p>
      * @param expresion String con función en LaTeX
-     * @param variableindep
+     * @param variableindep usualmente 'x'
      * @return String en HTML con la solución paso a paso de la derivada
      * y las ecuaciones de las rectas horizontales
      * @author Iván Gutiérrez
@@ -1688,31 +1101,7 @@ public class SolucionaSimbolico {
         String script = DERIVADOR+PARSER+ SOLVER_TANGENTE_HORIZONTAL_GRAFICA_JSX +CLOSER;
         script = script.replace("$EXPRESION$", expresion);
         script = script.replace("$VARIABLEIND$", variableindep);
-        String solucion = ejecutaPython(script);
-        return solucion;
-    }
-
-    /**
-     * Simplifica algebráicamente la expresión pasada como parámetro.
-     * @param expresion  String expresión algebráica en LaTeX a simplificar.
-     * @return String expresion simplificada en LaTeX.
-     * @author Iván Gutiérrez
-     */
-    public static String simplifica(String expresion){
-        String PLANTILLA_SYMPY =
-                "from sympy import *\n" +
-                        "from sympy.parsing.latex import parse_latex\n" +
-                        "salida = open(\"/tmp/solucion_$UUID$.txt\",\"w\")\n" +
-                        "init_printing()\n" +
-                        "x = var('x')\n" +
-                        "f = parse_latex(r\" $EXPRESION$ \")\n" +
-                        "f = expand(f) \n" +
-//                        "f = collect(f,x) \n" +
-                        "salida.write(\"%s\" %(latex(f)))\n" ;
-        String script = PLANTILLA_SYMPY;
-        script = script.replace("$EXPRESION$", expresion);
-        String solucion = ejecutaPython(script);
-        return solucion;
+        return ejecutaPython(script);
     }
 
 }
