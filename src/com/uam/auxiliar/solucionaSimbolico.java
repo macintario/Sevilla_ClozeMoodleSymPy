@@ -1080,7 +1080,7 @@ public class solucionaSimbolico {
             File archivoSolucion = new File("/tmp/solucion_" + uuid + ".txt");
             archivoSolucion.delete();
             File archivoScript = new File("/tmp/script_" + uuid + ".py");
-            //archivoScript.delete();
+            archivoScript.delete();
         } catch (java.io.IOException e) {
             System.err.format("Leyendo Solucion IOException: %s%n", e);
         }
