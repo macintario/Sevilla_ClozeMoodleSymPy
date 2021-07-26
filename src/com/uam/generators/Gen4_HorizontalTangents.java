@@ -6,7 +6,7 @@ package com.uam.generators;
  * */
 
 import com.uam.auxiliar.GeneradorReactivoCloze;
-import com.uam.auxiliar.solucionaSimbolico;
+import com.uam.auxiliar.SolucionaSimbolico;
 import com.uam.data.DatosReactivos;
 import com.uam.executor.EjecutadorGeneradorXML;
 import com.uam.utilidades.Utilidades;
@@ -176,7 +176,7 @@ public class Gen4_HorizontalTangents implements GeneradorReactivoCloze {
         reactivo = reactivo.replace("$RESPUESTA_P$", respuestaP.toString());
         reactivo = reactivo.replace("1x", "x");
 
-        solucion = solucionaSimbolico.tangentesHorizontalesGraficaJSX(expresion, "x");
+        solucion = SolucionaSimbolico.tangentesHorizontalesGraficaJSX(expresion, "x");
 
         reactivo = reactivo.replace("$SOLUCION$", solucion);
 

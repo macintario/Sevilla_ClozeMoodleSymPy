@@ -6,7 +6,7 @@ package com.uam.generators;
  * */
 
 import com.uam.auxiliar.GeneradorReactivoCloze;
-import com.uam.auxiliar.solucionaSimbolico;
+import com.uam.auxiliar.SolucionaSimbolico;
 import com.uam.data.DatosReactivos;
 import com.uam.executor.EjecutadorGeneradorXML;
 import com.uam.utilidades.Utilidades;
@@ -179,7 +179,7 @@ public class Gen2_SecondDerivative implements GeneradorReactivoCloze {
         reactivo = reactivo.replace("$RESPUESTA_N$", respuestaN.toString());
         reactivo = reactivo.replace("$RESPUESTA_P$", respuestaP.toString());
 
-        solucion = solucion+solucionaSimbolico.derivaSimbolicoSegunda(expresion, "x");
+        solucion = solucion+ SolucionaSimbolico.derivaSimbolicoSegunda(expresion, "x");
 
         reactivo = reactivo.replace("$SOLUCION$", solucion);
 

@@ -6,7 +6,7 @@ package com.uam.generators;
  * */
 
 import com.uam.auxiliar.GeneradorReactivoCloze;
-import com.uam.auxiliar.solucionaSimbolico;
+import com.uam.auxiliar.SolucionaSimbolico;
 import com.uam.data.DatosReactivos;
 import com.uam.executor.EjecutadorGeneradorXML;
 import com.uam.utilidades.Utilidades;
@@ -164,7 +164,7 @@ public class Gen1_Quotient implements GeneradorReactivoCloze {
         reactivo = reactivo.replace("$RESPUESTA_P$", respuestaP.toString());
 
         /* Aquí se llama al codigo que arma la solución en Python */
-        solucion = solucion+solucionaSimbolico.derivaSimbolico(expresion,"x");
+        solucion = solucion+ SolucionaSimbolico.derivaSimbolico(expresion,"x");
 
         reactivo = reactivo.replace("$SOLUCION$", solucion);
 

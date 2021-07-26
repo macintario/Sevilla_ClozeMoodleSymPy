@@ -23,7 +23,7 @@ import java.util.UUID;
  * @author Iván Gutiérrez
  */
 
-public class solucionaSimbolico {
+public class SolucionaSimbolico {
     /**
      * Licencia BSD
      */

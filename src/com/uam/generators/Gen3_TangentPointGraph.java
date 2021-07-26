@@ -6,7 +6,7 @@ package com.uam.generators;
  * */
 
 import com.uam.auxiliar.GeneradorReactivoCloze;
-import com.uam.auxiliar.solucionaSimbolico;
+import com.uam.auxiliar.SolucionaSimbolico;
 import com.uam.data.DatosReactivos;
 import com.uam.executor.EjecutadorGeneradorXML;
 import com.uam.utilidades.Utilidades;
@@ -178,7 +178,7 @@ public class Gen3_TangentPointGraph implements GeneradorReactivoCloze {
         reactivo = reactivo.replace("$YE0$", y_0.toString());
         reactivo = reactivo.replace("1x", "x");
 
-        solucion = solucionaSimbolico.rectaTangenteGrafica(expresion,x_0, "x");
+        solucion = SolucionaSimbolico.rectaTangenteGrafica(expresion,x_0, "x");
 
         reactivo = reactivo.replace("$SOLUCION$", solucion);
 
