@@ -827,7 +827,6 @@ public class solucionaSimbolico {
      * DERIVADOR
      * <p>
      * acomodaNotacion pone paréntesis explícitos para evitar ambigüedades en expresiones
-     * @author Iván Gutiérrez
      */
     private static final String SOLVER =
             "salida.write(\"Obtener: $$%s$$<br><br>\" % latex(Derivative(expr,$VARIABLEIND$)))\n" +
@@ -841,7 +840,6 @@ public class solucionaSimbolico {
      * escribiendo el procedimiento en el archivo de salida.
      * <p>
      * 2.-Se evalúa la derivada en el punto solicitado y se escribe la solución.
-     * @author Iván Gutiérrez
      */
     private static final String SOLVER_RECTA_TANGENTE =
             "x0 = $X0$\n"

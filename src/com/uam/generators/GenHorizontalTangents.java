@@ -1,4 +1,4 @@
-package com.uam.generadores;
+package com.uam.generators;
 /*
  *
  *
@@ -15,18 +15,18 @@ import static com.uam.constantes.Constantes.XML_PREFIJO;
 import static com.uam.constantes.Constantes.XML_SUFIJO;
 import static com.uam.utilidades.Utilidades.maximoComunDivisor;
 
-public class GenQuotient implements GeneradorReactivoCloze {
+public class GenHorizontalTangents implements GeneradorReactivoCloze {
     /**
      * El número de dígitos para el número de reactivo que se pondrá como
      * comentario del reactivo. e.g. si el número de posiciones es 3 entonces el
      * comentario que tendrá el primer reactivo será
-     * "<!--Reactivo cociente_000-->"
+     * "<!--Reactivo tangentesHorizontalesGrafica_000-->"
      */
     private static final int POSICIONES_CONTADOR_REACTIVO = 3;
     /**
      * El nombre o ruta absoluta del archivo de salida.
      */
-    private static final String NOMBRE_ARCHIVO_SALIDA = "Sevilla_step_by_step_quotient_differientiation.xml";
+    private static final String NOMBRE_ARCHIVO_SALIDA = "Sevilla_step_by_step_horizontal_tangents_graph.xml";
 
     /**
      * El número de reactivos que se generarán y vaciarán al archivo de texto.
@@ -41,46 +41,43 @@ public class GenQuotient implements GeneradorReactivoCloze {
             = "<span style=\"color: #ff0000,2E8B57; font-size: large;\"><strong>\n" +
             "galoisenlinea&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; http://galois.azc.uam.mx </strong></span>\n" +
             "<span style=\"color: #E38E03; font-size: large;\"><strong>\n" +
-            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En este ejercicio aprenderás a aplicar la regla del producto</strong></span> <br><br>"
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En este ejercicio encontrarás la recta tangente a una curva en un punto</strong></span> <br><br>"
             + "<span style=\"color: #ff0000; font-size: xx-large;\"><strong>\n"
             + "PROBLEMA:\n"
             + "</strong></span>"
             + "<center><span style=\"color: #0000ff; font-size: x-large;\"><strong>"
-            + "Considere la función: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-            + "$$\\displaystyle y(x)=$EXPRESION$ $$<br/>"
+            + "Determine los puntos donde la curva<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            + "$$\\displaystyle f(x)=$EXPRESION$ $$<br/><br/>tiene una o mas tangentes horizontales.<br/>"
             + "</strong><br/><br/></span><span style=\"color: #ff0000; font-size: x-large;\"><strong>"
-            + "<script type=\"math/tex\">\\bullet</script> &nbsp;&nbsp;&nbsp; Calculando la derivada de la función $$y($VARIABLE_INDEPENDIENTE$)$$ obtenemos que: </strong></span><br/><br/>"
+            + "<script type=\"math/tex\">\\bullet</script> &nbsp;&nbsp;&nbsp;"
+            +" Los puntos en donde las tangentes son horizontales son: </strong></span><br/><br/>"
             + "$RESPUESTA$"
             + "</strong></span><br/>"
             + "<span style=\"color: #000000; font-size: medium;\"><strong>"
-            + "Usted deberá calcular la derivada $$y'(x)$$, indicando en papel todos los pasos. "
-            + "<br/>Utilizando el resultado calculado por el sistema, deberás escribir en las cajas correspondientes los números que tú obtuviste. \n"
-            + "<br/></strong></span>"
-            + "$RESPUESTAS$<br/>"
+            + "Usted deberá calcular la derivada $$f(x)$$, igualarla a cero y encontrar las raices, para luego escribir las coordenadas de cada punto<br/>"
             + "<span style=\"color: #FF4000; font-size: medium;\"><strong>\n" +
             "¿ Revisión de su ejercicio ? Escribirás en papel el procedimiento detallado que muestre cómo obtuviste tus respuestas. \n" +
             "</strong></span>";
 
-    private static final int[] COTA_CONSTANTE_A = {3, 7};
-    private static final int[] COTA_CONSTANTE_B = {2, 9};
-    private static final int[] COTA_CONSTANTE_C = {2, 9};
-    private static final int[] COTA_CONSTANTE_D = {3, 9};
-    private static final int[] COTA_CONSTANTE_E = {2, 9};
-    private static final int[] COTA_CONSTANTE_F = {2, 9};
+    private static final int[] COTA_CONSTANTE_D = {-5, 5};
     private static final int[] COTA_CONSTANTE_G = {3, 5};
     private static final int[] COTA_CONSTANTE_H = {2, 5};
+    private static final int[] COTA_R = {-4, 4};
 
-    private static final String EXPRESION = "\\frac{$CONSTANTEA$x+$CONSTANTEB$}{$CONSTANTEC$x-$CONSTANTED$}";
-    private String RESPUESTA= "$$\\displaystyle y'(x)=\\frac{A}{(Bx+C)^D}$$ <br/>";
-    private String CAJAS_RESPUESTA = "$$A=$${1:SHORTANSWER:=$RESPUESTA_A$} <br/> $$B=$${1:SHORTANSWER:=$RESPUESTA_B$} <br/> "
-            + "$$C=$${1:SHORTANSWER:=$RESPUESTA_C$} <br/> $$D=$${1:SHORTANSWER:=$RESPUESTA_D$} <br/>"
+    private static final String EXPRESION = "$CONSTANTEA$x^3+$CONSTANTEB$x^2+$CONSTANTEC$x+$CONSTANTED$";
+    private String RESPUESTA= "$$\\displaystyle P_1($${1:SHORTANSWER:=$RESPUESTA_A$}$$,$${1:SHORTANSWER:=$RESPUESTA_B$}$$)$$ <br/>"+
+            "$$\\displaystyle P_2($${1:SHORTANSWER:=$RESPUESTA_C$}$$,$${1:SHORTANSWER:=$RESPUESTA_D$}$$)$$ <br/>";
+    private String CAJAS_RESPUESTA = "$$A=$${1:SHORTANSWER:=$RESPUESTA_A$} <br/> $$B=$${1:SHORTANSWER:=$RESPUESTA_B$}) <br/> "
             + "<span style=\"color: #ff0000; font-size: x-large;\"><strong>"
-            + "<script type=\"math/tex\">\\bullet</script> &nbsp;&nbsp;&nbsp; Los números $$A,B,C,D$$ en este orden "
+            + "<script type=\"math/tex\">\\bullet</script> &nbsp;&nbsp;&nbsp; Los números $$A,B$$ en este orden "
             + "y que dan solución correcta al ejercicio son: </strong></span>"
             + " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-            +" {20:SHORTANSWER:=$RESPUESTA_A$,$RESPUESTA_B$,$RESPUESTA_C$,$RESPUESTA_D$"
+            +" {20:SHORTANSWER:=$RESPUESTA_A$,$RESPUESTA_B$"
             + "}</center> <br>"
             + "</center>";
+/**
+ *
+ */
     /**
      * El comentario que se pondrá a cada reactivo para etiquetarlo, el sufijo
      * sera el número de reactivo. Éste se insertará como un comentario html
@@ -89,41 +86,52 @@ public class GenQuotient implements GeneradorReactivoCloze {
      * $COMENTARIO$ en la plantilla del reactivo.
      *
      */
-    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevillla_Quotient_Derivative_SBS_";
+    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_Hor_Tan_SBS";
     private static final String SEPARADOR_REACTIVOS = "\r\n";
 
     @Override
     public String generarReactivoCloze(int numeroReactivo) {
         String solucion = "";
         //Generación de variables aleatorias con parámetros de ejecución
-        Integer constanteA = Utilidades.obtenerImparAleatorio(COTA_CONSTANTE_A[0], COTA_CONSTANTE_A[1]);
-        Integer constanteB = Utilidades.obtenerImparAleatorio(COTA_CONSTANTE_B[0], COTA_CONSTANTE_B[1]);
-        Integer constanteC = Utilidades.obtenerEnteroAleatorio(COTA_CONSTANTE_C[0], COTA_CONSTANTE_C[1]);
-        Integer constanteD = Utilidades.obtenerEnteroAleatorio(COTA_CONSTANTE_D[0], COTA_CONSTANTE_D[1]);;
-        Integer constanteE = Utilidades.obtenerEnteroAleatorio(COTA_CONSTANTE_E[0], COTA_CONSTANTE_E[1]);
-        Integer constanteF = Utilidades.obtenerEnteroAleatorio(COTA_CONSTANTE_F[0], COTA_CONSTANTE_F[1]);
+        Integer r1 = Utilidades.obtenerEnteroAleatorioDistintoDe(COTA_R[0], COTA_R[1],0);
+        Integer r2;
+        do {
+            r2 = Utilidades.obtenerEnteroAleatorioDistintoDe(COTA_R[0], COTA_R[1], 0);
+        }while(r2.equals(r1) || r2.equals(-r1) );
+        if(r2>r1){
+            Integer tmp = r2;
+            r2=r1;
+            r1=tmp;
+        }
+        Integer constanteA = 2;
+        Integer constanteB = (r1+r2)*3;
+        Integer constanteC = 6*r1*r2;
+        Integer constanteD =  Utilidades.obtenerEnteroAleatorioDistintoDe(COTA_CONSTANTE_D[0], COTA_CONSTANTE_D[1],0);
+        Integer divisor = maximoComunDivisor(maximoComunDivisor(maximoComunDivisor(constanteA,constanteB),constanteC),constanteD);
+        if(divisor<0) divisor = -divisor;
+        constanteA/=divisor;
+        constanteB/=divisor;
+        constanteC/=divisor;
+        constanteD/=divisor;
+        Integer constanteE = constanteA;
+        Integer constanteF = constanteC;
         Integer constanteG = Utilidades.obtenerEnteroAleatorio(COTA_CONSTANTE_G[0], COTA_CONSTANTE_G[1]);
         Integer constanteH = Utilidades.obtenerImparAleatorioDistintoDe(COTA_CONSTANTE_H[0], COTA_CONSTANTE_H[1], constanteF);
-
-        String comentarioReactivo
-                = Utilidades.generaComentario(COMENTARIO_REACTIVO_PREFIJO, numeroReactivo, POSICIONES_CONTADOR_REACTIVO);
-        Integer respuestaA = -constanteB*constanteC-constanteA*constanteD;
-        Integer respuestaB = constanteC;
-        Integer respuestaC = -constanteD;
-        Integer respuestaD = 2;
+        String comentarioReactivo = Utilidades.generaComentario(COMENTARIO_REACTIVO_PREFIJO, numeroReactivo, POSICIONES_CONTADOR_REACTIVO);
+        Integer respuestaA = -r1;
+        Integer respuestaB = -constanteA*r1*r1*r1+constanteB*r1*r1-constanteC*r1+constanteD;
+        Integer respuestaC = -r2;
+        Integer respuestaD = -constanteA*r2*r2*r2+constanteB*r2*r2-constanteC*r2+constanteD;
         Integer respuestaE = constanteA;
-        Integer respuestaF = constanteA;
-        Integer respuestaG = constanteB;
-        Integer respuestaH = constanteC+1;
-
-        Integer respuestaJ = constanteA;
-        Integer respuestaK = constanteA-1;
-        Integer respuestaL = -constanteC;
-        Integer respuestaM = 2;
-        Integer respuestaN = constanteC;
-        Integer respuestaP = constanteC;
-        //Checar fracción reductible respuestaE y respuestaJ
-        Integer divisor = maximoComunDivisor(respuestaA, respuestaC);
+        Integer respuestaF = constanteC;
+        Integer respuestaG = constanteA;
+        Integer respuestaH = 2;
+        Integer respuestaJ = constanteC;
+        Integer respuestaK = constanteA;
+        Integer respuestaL = 3*constanteA-1;
+        Integer respuestaM = constanteA;
+        Integer respuestaN = constanteB;
+        Integer respuestaP = constanteA;
 
         String parVariables = DatosReactivos.obtenerParesVariables();
         String variableIndependiente = parVariables.substring(0, 1);
@@ -141,9 +149,15 @@ public class GenQuotient implements GeneradorReactivoCloze {
         expresion = expresion.replace("$CONSTANTEF$", constanteF.toString());
         expresion = expresion.replace("$CONSTANTEG$", constanteG.toString());
         expresion = expresion.replace("$CONSTANTEH$", constanteH.toString());
+        expresion = expresion.replace("+-", "-");
 
         reactivo = reactivo.replace("$RESPUESTAS$", CAJAS_RESPUESTA);
         reactivo = reactivo.replace("$RESPUESTA$", RESPUESTA);
+        //cambiar el problema para punto  tangente
+        reactivo = reactivo.replace("\\frac{d}{dx}\\left($EXPRESION$ \\right)",
+                "puntos extremos de f\\left(x\\right)=$EXPRESION$");
+        reactivo = reactivo.replace("<strong>La derivada de la función $$f(x)$$ es:</strong>",
+                "<strong>Los puntos donde la derivada se anula son:</strong>");
         reactivo = reactivo.replace("$EXPRESION$", expresion);
         reactivo = reactivo.replace("$COMENTARIO$", comentarioReactivo);
         reactivo = reactivo.replace("$VARIABLE_INDEPENDIENTE$", variableIndependiente);
@@ -162,9 +176,9 @@ public class GenQuotient implements GeneradorReactivoCloze {
         reactivo = reactivo.replace("$RESPUESTA_M$", respuestaM.toString());
         reactivo = reactivo.replace("$RESPUESTA_N$", respuestaN.toString());
         reactivo = reactivo.replace("$RESPUESTA_P$", respuestaP.toString());
+        reactivo = reactivo.replace("1x", "x");
 
-        /* Aquí se llama al codigo que arma la solución en Python */
-        solucion = solucion+solucionaSimbolico.derivaSimbolico(expresion,"x");
+        solucion = solucionaSimbolico.tangentesHorizontalesGraficaJSX(expresion, "x");
 
         reactivo = reactivo.replace("$SOLUCION$", solucion);
 
@@ -174,7 +188,7 @@ public class GenQuotient implements GeneradorReactivoCloze {
     }
 
     public static void main(String[] args) {
-        EjecutadorGeneradorXML.generarReactivos(NOMBRE_ARCHIVO_SALIDA, NUMERO_DE_REACTIVOS, new GenQuotient());
+        EjecutadorGeneradorXML.generarReactivos(NOMBRE_ARCHIVO_SALIDA, NUMERO_DE_REACTIVOS, new GenHorizontalTangents());
     }
 
 

@@ -1,4 +1,4 @@
-package com.uam.generadores;
+package com.uam.generators;
 /*
  *
  *

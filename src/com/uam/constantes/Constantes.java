@@ -98,7 +98,7 @@ public class Constantes {
             + "<!-- question: 0  -->\n"
             + "  <question type=\"category\">\n"
             + "    <category>\n"
-            + "        <text>$module$/Sevilla_derivative_step_by_step</text>\n"
+            + "        <text>$module$/Sevilla_step_by_step_derivative</text>\n"
             + "    </category>\n"
             + "  </question>\n"
             + "";
