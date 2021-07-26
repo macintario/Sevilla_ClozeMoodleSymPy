@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$module$/Sevilla_step_by_step_derivative</text>
+    </category>
+  </question>
+<!-- question: Sevilla_step_by_step_tangent_graph_000  -->
+  <question type="cloze">
+    <name>
+      <text>Sevilla_step_by_step_tangent_graph_000</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<span style="color: #ff0000,2E8B57; font-size: large;"><strong>
+galoisenlinea&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; http://galois.azc.uam.mx </strong></span>
+<span style="color: #E38E03; font-size: large;"><strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En este ejercicio encontrarás la recta tangente a una curva en un punto</strong></span> <br><br><span style="color: #ff0000; font-size: xx-large;"><strong>
+PROBLEMA:
+</strong></span><center><span style="color: #0000ff; font-size: x-large;"><strong>Escribe la ecuación de le recta tangente a la curva $$y=f(x)$$ en el punto $$P(x_{0},f(x_{0}))$$:<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$\displaystyle f(x)=-x^3+3x^2+3x-6 $$<br/> $$\displaystyle x_{0}=-1 $$<br/></strong><br/><br/></span><span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Calculando la derivada de la función $$f(x)$$ y evaluando en el punto $$x_{0}$$, la ecuación de la recta tangente es: </strong></span><br/><br/>$$\displaystyle y={A}x+{B}$$ <br/></strong></span><br/><span style="color: #000000; font-size: medium;"><strong>Usted deberá calcular la derivada $$f(x)$$, evaluando la función y la derivada en el punto $$ x_{0} $$ y sustituyendo en la ecuación de la recta<br/> $$ y-f(x_{0})=f'(x_{0})(x-x_{0})$$ 
+<br/>Utilizando el resultado calculado por el sistema, deberás escribir en las cajas correspondientes los números que tú obtuviste. 
+<br/></strong></span>$$A=$${1:SHORTANSWER:=-6} <br/> $$B=$${1:SHORTANSWER:=-11} <br/> <span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Los números $$A,B$$ en este orden y que dan solución correcta al ejercicio son: </strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {20:SHORTANSWER:=-6,-11}</center> <br></center><br/><span style="color: #FF4000; font-size: medium;"><strong>
+¿ Revisión de su ejercicio ? Escribirás en papel el procedimiento detallado que muestre cómo obtuviste tus respuestas. 
+</strong></span>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<span style="color: #000000; font-size: large;"><strong>Instrucciones para hacer autoevaluaciones y poder presentar examen de unidad.</strong></span><br/><br/>a).- Nos interesa que usted domine el
+ejercicio aquí mostrado; para ello tendrá que seguir un procedimiento
+detallado, similar al que ofrece Symbolab. Cualquier duda, consulte a cualquier
+profesor de galoisenlinea, en los siguientes lugares y horarios:&nbsp; <a href="http://galois.azc.uam.mx/mate/propaganda/horarios.pdf" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/entrar.gif" alt="" width="80" height="64" role="presentation" class="img-responsive atto_image_button_middle"></a><br/><p>b).-Realiza tantas autoevaluaciones como tú lo necesites. Entre más mejor !!!</p><br/><br/><span style="color: #000000; font-size: x-large"><strong>SOLUCIÓN:</strong></span><br/><br/><span style="color: #000000; font-size: large">Obtener: $$\frac{d}{d x} \left(\left(3 x + \left(- x^{3} + 3 x^{2}\right)\right) - 6\right)$$<br><br><ol>
+<li>
+    <p>Diferenciando <script type="math/tex; mode=inline">\left(3 x + \left(- x^{3} + 3 x^{2}\right)\right) - 6</script> término por término:</p>
+    <ol>
+    <li>
+        <p>Diferenciando <script type="math/tex; mode=inline">3 x + \left(- x^{3} + 3 x^{2}\right)</script> término por término:</p>
+        <ol>
+        <li>
+            <p>Diferenciando <script type="math/tex; mode=inline">- x^{3} + 3 x^{2}</script> término por término:</p>
+            <ol>
+            <li>
+                <p>La derivada de N veces una función es N veces la derivada de la función</p>
+                <ol>
+                <li>
+                    <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x^{3}</script> se obtiene <script type="math/tex; mode=inline">3 x^{2}</script></p>
+                </li><br>
+                </ol><br/>
+                <p>Así, el resultado es: <script type="math/tex; mode=inline">- 3 x^{2}</script></p>
+            </li><br>
+            <li>
+                <p>La derivada de N veces una función es N veces la derivada de la función</p>
+                <ol>
+                <li>
+                    <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x^{2}</script> se obtiene <script type="math/tex; mode=inline">2 x</script></p>
+                </li><br>
+                </ol><br/>
+                <p>Así, el resultado es: <script type="math/tex; mode=inline">6 x</script></p>
+            </li><br>
+            </ol><br/>
+            <p>El resultado es: <script type="math/tex; mode=inline">- 3 x^{2} + 6 x</script></p>
+        </li><br>
+        <li>
+            <p>La derivada de N veces una función es N veces la derivada de la función</p>
+            <ol>
+            <li>
+                <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x</script> se obtiene <script type="math/tex; mode=inline">1</script></p>
+            </li><br>
+            </ol><br/>
+            <p>Así, el resultado es: <script type="math/tex; mode=inline">3</script></p>
+        </li><br>
+        </ol><br/>
+        <p>El resultado es: <script type="math/tex; mode=inline">- 3 x^{2} + 6 x + 3</script></p>
+    </li><br>
+    <li>
+        <p>La derivada de la constante <script type="math/tex; mode=inline">-6</script> es cero.</p>
+    </li><br>
+    </ol><br/>
+    <p>El resultado es: <script type="math/tex; mode=inline">- 3 x^{2} + 6 x + 3</script></p>
+</li><br>
+<li>
+    <p>Simplificando:</p>
+    <p><script type="math/tex; mode=display">- 3 \left(x^{2} - 2 x - 1\right)</script></p>
+</li><br>
+</ol><br/>
+<hr/>
+    <p>La respuesta es:</p>
+    <p><script type="math/tex; mode=display">- 3 \left(x^{2} - 2 x - 1\right)</script></p>
+ Evaluamos en $$x_{0}=-1 $$
+<br/><br/> Sustituyendo en $$f(x)$$ el valor de $$x_{0}$$<br/><center>$$f(x_{0})=-5$$</center> 
+<br/><br/>Sustituyendo en $$f'(x)$$ el valor de $$x_{0}$$<br/><center>$$f'(x_{0})=\left. \frac{d}{d x} \left(\left(3 x + \left(- x^{3} + 3 x^{2}\right)\right) - 6\right) \right|_{\substack{ x=-1 }}=-6$$</center> 
+<br/><br/>Sustituyendo en la ecuación de la recta $$y-f(x_{0})=f'(x_{0})(x-x_{0})$$ obtenemos:
+<br/><center>$$y-(-5)=(-6)(x-(-1))$$ </center>
+<br/>Simplificando:
+<br/><center>$$y=-6x-11$$</center><br/><br/>
+<jsxgraph width="600" height="500">
+function f(x) { return 3*x - x**3 + 3*x**2 - 6; }
+ function t(x) { return -6*x+(-11); }
+var brd = JXG.JSXGraph.initBoard(BOARDID, {boundingbox:[-6,0,4,-10], axis:true});
+var p = brd.create("point", [-1,-5],{name:'P0',fixed:true});
+var l = brd.create("functiongraph", t, {strokecolor:'green'});
+var c = brd.create("functiongraph", f, {strokewidth:2});
+</jsxgraph>
+</span><span style="color: #ff0000; font-size: large"><strong>PROCEDIMIENTO DE SOLUCION PASO A PASO</strong></span><br/><br/>En este ejercicio y con objeto de que uses uno de los mejores Sistemas Algebraicos Computacionales (CAS) llamado <span style="color: #ff0000"><strong>Symbolab</strong></span>, obtendrás el procedimiento de solución de este ejercicio paso a paso.<br/>Es importante que analice el procedimiento dado por Symbolab; en examen tendrás que hacer el procedimiento detallado de algún ejercicio similar.<br/><br/>Si requieres revisión en algún punto de tu desarrollo en papel, muestra tu procedimiento detallado a algún profesor de galoisenlinea y con mucho gusto aclararemos tus dudas. <br/><ul style="list-style-type:square"><li>Click en cada fórmula en azul y copia el texto:<br><br><center><span style="color:#ff0000; fontsize:medium;"><strong>La recta tangente a la función $$f(x)$$ en el punto $$x_0=-1 $$  es:</strong></span><br/><br/><span style="color: #0000ff; font-size:x-large;"><strong> tangente de f\left(x\right)=-x^3+3x^2+3x-6, at(-1,-5)</strong></span></center></li><br/><li>Click en icono de Symbolab:<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 100px; height: 70px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a></li><li>Pega en la ventana de entrada de datos de Symbolab tu texto copiado. Allí obtendrás la solución del ejercicio paso a paso.</li></ul><p style="text-align: left;"><span style="color: rgb(255, 0, 0); font-size: x-large;"><strong>Biblioteca en galoisenlinea:</strong></span>&nbsp; &nbsp;&nbsp;<strong style="text-align: center; color: rgb(0, 0, 0); font-size: x-large;">Consulta material relacionado a este ejercicio aquí:&nbsp;&nbsp;<a href="http://galois.azc.uam.mx/mate/DIFERENCIAL/autoevaluacion1/index.html" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/folder3.webp" alt="" width="100" height="75" role="presentation" class="img-responsive atto_image_button_text-bottom"></a>&nbsp; &nbsp;&nbsp;</strong></p><center>
+</center><strong>
+
+	
+<br>
+<br>
+<br>
+
+<span style="color: #ff0000; font-size: large;"><strong>
+LIBRO DE TEXTO Y SOLUCIONARIO AL LIBRO DE TEXTO:</strong></span><br>
+	<br>
+TEXTO: Para teoría y ejercicios consulta el libro: George B. Thomas, Jr. Decimosegunda edición 
+Massachusetts Institute of Technology.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+SOLUCIONARIO AL TEXTO: Consulta el libro: THOMAS' CALCULUS, Solution Manual,  Twelfth Edition.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+<br>
+<br>
+<span style="color: #ff0000; font-size: large;"><strong>
+CAS (Sistemas algebraicos computacionales):</strong></span><br>
+
+En las autoevaluaciones, una vez que realices cada ejercicio, te sugerimos usar cualquiera de los 
+siguientes Sistemas Algebraicos Computacionales (CAS) para comprobar tus cálculos. 
+<br>
+En exámenes no podrás usar ninguno de estos CAS.   Click en iconos para abrir CAS.<br>&nbsp;
+<br>
+<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 120px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;&nbsp;
+<a title="Mathway" href="https://www.mathway.com/" target="_blank"><img title="Mathway" style="width: 150px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/mathway.png" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wiris" href="http://www.wiris.net/demo/wiris/manual/es/html/tour/index.html" target="_blank"><img title="Wiris" style="width: 100px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wiris.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wolfram Alpha" href="https://www.wolframalpha.com/" target="_blank"><img title="Wolfram Alpha" style="width: 150px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wolframalpha.png" border="0" height="40" hspace="0" width="40"></a><br><br>&nbsp;</strong>    ]]></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+  </question>
+<!-- question: Sevilla_step_by_step_tangent_graph_001  -->
+  <question type="cloze">
+    <name>
+      <text>Sevilla_step_by_step_tangent_graph_001</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<span style="color: #ff0000,2E8B57; font-size: large;"><strong>
+galoisenlinea&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; http://galois.azc.uam.mx </strong></span>
+<span style="color: #E38E03; font-size: large;"><strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En este ejercicio encontrarás la recta tangente a una curva en un punto</strong></span> <br><br><span style="color: #ff0000; font-size: xx-large;"><strong>
+PROBLEMA:
+</strong></span><center><span style="color: #0000ff; font-size: x-large;"><strong>Escribe la ecuación de le recta tangente a la curva $$y=f(x)$$ en el punto $$P(x_{0},f(x_{0}))$$:<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$\displaystyle f(x)=3x^3-3x^2+3x+3 $$<br/> $$\displaystyle x_{0}=-1 $$<br/></strong><br/><br/></span><span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Calculando la derivada de la función $$f(x)$$ y evaluando en el punto $$x_{0}$$, la ecuación de la recta tangente es: </strong></span><br/><br/>$$\displaystyle y={A}x+{B}$$ <br/></strong></span><br/><span style="color: #000000; font-size: medium;"><strong>Usted deberá calcular la derivada $$f(x)$$, evaluando la función y la derivada en el punto $$ x_{0} $$ y sustituyendo en la ecuación de la recta<br/> $$ y-f(x_{0})=f'(x_{0})(x-x_{0})$$ 
+<br/>Utilizando el resultado calculado por el sistema, deberás escribir en las cajas correspondientes los números que tú obtuviste. 
+<br/></strong></span>$$A=$${1:SHORTANSWER:=18} <br/> $$B=$${1:SHORTANSWER:=12} <br/> <span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Los números $$A,B$$ en este orden y que dan solución correcta al ejercicio son: </strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {20:SHORTANSWER:=18,12}</center> <br></center><br/><span style="color: #FF4000; font-size: medium;"><strong>
+¿ Revisión de su ejercicio ? Escribirás en papel el procedimiento detallado que muestre cómo obtuviste tus respuestas. 
+</strong></span>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<span style="color: #000000; font-size: large;"><strong>Instrucciones para hacer autoevaluaciones y poder presentar examen de unidad.</strong></span><br/><br/>a).- Nos interesa que usted domine el
+ejercicio aquí mostrado; para ello tendrá que seguir un procedimiento
+detallado, similar al que ofrece Symbolab. Cualquier duda, consulte a cualquier
+profesor de galoisenlinea, en los siguientes lugares y horarios:&nbsp; <a href="http://galois.azc.uam.mx/mate/propaganda/horarios.pdf" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/entrar.gif" alt="" width="80" height="64" role="presentation" class="img-responsive atto_image_button_middle"></a><br/><p>b).-Realiza tantas autoevaluaciones como tú lo necesites. Entre más mejor !!!</p><br/><br/><span style="color: #000000; font-size: x-large"><strong>SOLUCIÓN:</strong></span><br/><br/><span style="color: #000000; font-size: large">Obtener: $$\frac{d}{d x} \left(\left(3 x + \left(3 x^{3} - 3 x^{2}\right)\right) + 3\right)$$<br><br><ol>
+<li>
+    <p>Diferenciando <script type="math/tex; mode=inline">\left(3 x + \left(3 x^{3} - 3 x^{2}\right)\right) + 3</script> término por término:</p>
+    <ol>
+    <li>
+        <p>Diferenciando <script type="math/tex; mode=inline">3 x + \left(3 x^{3} - 3 x^{2}\right)</script> término por término:</p>
+        <ol>
+        <li>
+            <p>Diferenciando <script type="math/tex; mode=inline">3 x^{3} - 3 x^{2}</script> término por término:</p>
+            <ol>
+            <li>
+                <p>La derivada de N veces una función es N veces la derivada de la función</p>
+                <ol>
+                <li>
+                    <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x^{3}</script> se obtiene <script type="math/tex; mode=inline">3 x^{2}</script></p>
+                </li><br>
+                </ol><br/>
+                <p>Así, el resultado es: <script type="math/tex; mode=inline">9 x^{2}</script></p>
+            </li><br>
+            <li>
+                <p>La derivada de N veces una función es N veces la derivada de la función</p>
+                <ol>
+                <li>
+                    <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x^{2}</script> se obtiene <script type="math/tex; mode=inline">2 x</script></p>
+                </li><br>
+                </ol><br/>
+                <p>Así, el resultado es: <script type="math/tex; mode=inline">- 6 x</script></p>
+            </li><br>
+            </ol><br/>
+            <p>El resultado es: <script type="math/tex; mode=inline">9 x^{2} - 6 x</script></p>
+        </li><br>
+        <li>
+            <p>La derivada de N veces una función es N veces la derivada de la función</p>
+            <ol>
+            <li>
+                <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x</script> se obtiene <script type="math/tex; mode=inline">1</script></p>
+            </li><br>
+            </ol><br/>
+            <p>Así, el resultado es: <script type="math/tex; mode=inline">3</script></p>
+        </li><br>
+        </ol><br/>
+        <p>El resultado es: <script type="math/tex; mode=inline">9 x^{2} - 6 x + 3</script></p>
+    </li><br>
+    <li>
+        <p>La derivada de la constante <script type="math/tex; mode=inline">3</script> es cero.</p>
+    </li><br>
+    </ol><br/>
+    <p>El resultado es: <script type="math/tex; mode=inline">9 x^{2} - 6 x + 3</script></p>
+</li><br>
+<li>
+    <p>Simplificando:</p>
+    <p><script type="math/tex; mode=display">3 \left(3 x^{2} - 2 x + 1\right)</script></p>
+</li><br>
+</ol><br/>
+<hr/>
+    <p>La respuesta es:</p>
+    <p><script type="math/tex; mode=display">3 \left(3 x^{2} - 2 x + 1\right)</script></p>
+ Evaluamos en $$x_{0}=-1 $$
+<br/><br/> Sustituyendo en $$f(x)$$ el valor de $$x_{0}$$<br/><center>$$f(x_{0})=-6$$</center> 
+<br/><br/>Sustituyendo en $$f'(x)$$ el valor de $$x_{0}$$<br/><center>$$f'(x_{0})=\left. \frac{d}{d x} \left(\left(3 x + \left(3 x^{3} - 3 x^{2}\right)\right) + 3\right) \right|_{\substack{ x=-1 }}=18$$</center> 
+<br/><br/>Sustituyendo en la ecuación de la recta $$y-f(x_{0})=f'(x_{0})(x-x_{0})$$ obtenemos:
+<br/><center>$$y-(-6)=(18)(x-(-1))$$ </center>
+<br/>Simplificando:
+<br/><center>$$y=18x+12$$</center><br/><br/>
+<jsxgraph width="600" height="500">
+function f(x) { return 3*x + 3*x**3 - 3*x**2 + 3; }
+ function t(x) { return 18*x+(12); }
+var brd = JXG.JSXGraph.initBoard(BOARDID, {boundingbox:[-6,-1,4,-11], axis:true});
+var p = brd.create("point", [-1,-6],{name:'P0',fixed:true});
+var l = brd.create("functiongraph", t, {strokecolor:'green'});
+var c = brd.create("functiongraph", f, {strokewidth:2});
+</jsxgraph>
+</span><span style="color: #ff0000; font-size: large"><strong>PROCEDIMIENTO DE SOLUCION PASO A PASO</strong></span><br/><br/>En este ejercicio y con objeto de que uses uno de los mejores Sistemas Algebraicos Computacionales (CAS) llamado <span style="color: #ff0000"><strong>Symbolab</strong></span>, obtendrás el procedimiento de solución de este ejercicio paso a paso.<br/>Es importante que analice el procedimiento dado por Symbolab; en examen tendrás que hacer el procedimiento detallado de algún ejercicio similar.<br/><br/>Si requieres revisión en algún punto de tu desarrollo en papel, muestra tu procedimiento detallado a algún profesor de galoisenlinea y con mucho gusto aclararemos tus dudas. <br/><ul style="list-style-type:square"><li>Click en cada fórmula en azul y copia el texto:<br><br><center><span style="color:#ff0000; fontsize:medium;"><strong>La recta tangente a la función $$f(x)$$ en el punto $$x_0=-1 $$  es:</strong></span><br/><br/><span style="color: #0000ff; font-size:x-large;"><strong> tangente de f\left(x\right)=3x^3-3x^2+3x+3, at(-1,-6)</strong></span></center></li><br/><li>Click en icono de Symbolab:<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 100px; height: 70px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a></li><li>Pega en la ventana de entrada de datos de Symbolab tu texto copiado. Allí obtendrás la solución del ejercicio paso a paso.</li></ul><p style="text-align: left;"><span style="color: rgb(255, 0, 0); font-size: x-large;"><strong>Biblioteca en galoisenlinea:</strong></span>&nbsp; &nbsp;&nbsp;<strong style="text-align: center; color: rgb(0, 0, 0); font-size: x-large;">Consulta material relacionado a este ejercicio aquí:&nbsp;&nbsp;<a href="http://galois.azc.uam.mx/mate/DIFERENCIAL/autoevaluacion1/index.html" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/folder3.webp" alt="" width="100" height="75" role="presentation" class="img-responsive atto_image_button_text-bottom"></a>&nbsp; &nbsp;&nbsp;</strong></p><center>
+</center><strong>
+
+	
+<br>
+<br>
+<br>
+
+<span style="color: #ff0000; font-size: large;"><strong>
+LIBRO DE TEXTO Y SOLUCIONARIO AL LIBRO DE TEXTO:</strong></span><br>
+	<br>
+TEXTO: Para teoría y ejercicios consulta el libro: George B. Thomas, Jr. Decimosegunda edición 
+Massachusetts Institute of Technology.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+SOLUCIONARIO AL TEXTO: Consulta el libro: THOMAS' CALCULUS, Solution Manual,  Twelfth Edition.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+<br>
+<br>
+<span style="color: #ff0000; font-size: large;"><strong>
+CAS (Sistemas algebraicos computacionales):</strong></span><br>
+
+En las autoevaluaciones, una vez que realices cada ejercicio, te sugerimos usar cualquiera de los 
+siguientes Sistemas Algebraicos Computacionales (CAS) para comprobar tus cálculos. 
+<br>
+En exámenes no podrás usar ninguno de estos CAS.   Click en iconos para abrir CAS.<br>&nbsp;
+<br>
+<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 120px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;&nbsp;
+<a title="Mathway" href="https://www.mathway.com/" target="_blank"><img title="Mathway" style="width: 150px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/mathway.png" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wiris" href="http://www.wiris.net/demo/wiris/manual/es/html/tour/index.html" target="_blank"><img title="Wiris" style="width: 100px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wiris.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wolfram Alpha" href="https://www.wolframalpha.com/" target="_blank"><img title="Wolfram Alpha" style="width: 150px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wolframalpha.png" border="0" height="40" hspace="0" width="40"></a><br><br>&nbsp;</strong>    ]]></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+  </question>
+</quiz>

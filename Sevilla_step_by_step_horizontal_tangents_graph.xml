@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$module$/Sevilla_step_by_step_derivative</text>
+    </category>
+  </question>
+<!-- question: Sevilla_step_by_step_horizontal_tangents_graph_000  -->
+  <question type="cloze">
+    <name>
+      <text>Sevilla_step_by_step_horizontal_tangents_graph_000</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<span style="color: #ff0000,2E8B57; font-size: large;"><strong>
+galoisenlinea&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; http://galois.azc.uam.mx </strong></span>
+<span style="color: #E38E03; font-size: large;"><strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En este ejercicio encontrarás la recta tangente a una curva en un punto</strong></span> <br><br><span style="color: #ff0000; font-size: xx-large;"><strong>
+PROBLEMA:
+</strong></span><center><span style="color: #0000ff; font-size: x-large;"><strong>Determine los puntos donde la curva<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$\displaystyle f(x)=2x^3+9x^2+12x+5 $$<br/><br/>tiene una o mas tangentes horizontales.<br/></strong><br/><br/></span><span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Los puntos en donde las tangentes son horizontales son: </strong></span><br/><br/>$$\displaystyle P_1($${1:SHORTANSWER:=-2}$$,$${1:SHORTANSWER:=1}$$)$$ <br/>$$\displaystyle P_2($${1:SHORTANSWER:=-1}$$,$${1:SHORTANSWER:=0}$$)$$ <br/></strong></span><br/><span style="color: #000000; font-size: medium;"><strong>Usted deberá calcular la derivada $$f(x)$$, igualarla a cero y encontrar las raices, para luego escribir las coordenadas de cada punto<br/><span style="color: #FF4000; font-size: medium;"><strong>
+¿ Revisión de su ejercicio ? Escribirás en papel el procedimiento detallado que muestre cómo obtuviste tus respuestas. 
+</strong></span>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<span style="color: #000000; font-size: large;"><strong>Instrucciones para hacer autoevaluaciones y poder presentar examen de unidad.</strong></span><br/><br/>a).- Nos interesa que usted domine el
+ejercicio aquí mostrado; para ello tendrá que seguir un procedimiento
+detallado, similar al que ofrece Symbolab. Cualquier duda, consulte a cualquier
+profesor de galoisenlinea, en los siguientes lugares y horarios:&nbsp; <a href="http://galois.azc.uam.mx/mate/propaganda/horarios.pdf" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/entrar.gif" alt="" width="80" height="64" role="presentation" class="img-responsive atto_image_button_middle"></a><br/><p>b).-Realiza tantas autoevaluaciones como tú lo necesites. Entre más mejor !!!</p><br/><br/><span style="color: #000000; font-size: x-large"><strong>SOLUCIÓN:</strong></span><br/><br/><span style="color: #000000; font-size: large">Obtener: $$\frac{d}{d x} \left(\left(12 x + \left(2 x^{3} + 9 x^{2}\right)\right) + 5\right)$$<br><br><ol>
+<li>
+    <p>Diferenciando <script type="math/tex; mode=inline">\left(12 x + \left(2 x^{3} + 9 x^{2}\right)\right) + 5</script> término por término:</p>
+    <ol>
+    <li>
+        <p>Diferenciando <script type="math/tex; mode=inline">12 x + \left(2 x^{3} + 9 x^{2}\right)</script> término por término:</p>
+        <ol>
+        <li>
+            <p>Diferenciando <script type="math/tex; mode=inline">2 x^{3} + 9 x^{2}</script> término por término:</p>
+            <ol>
+            <li>
+                <p>La derivada de N veces una función es N veces la derivada de la función</p>
+                <ol>
+                <li>
+                    <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x^{3}</script> se obtiene <script type="math/tex; mode=inline">3 x^{2}</script></p>
+                </li><br>
+                </ol><br/>
+                <p>Así, el resultado es: <script type="math/tex; mode=inline">6 x^{2}</script></p>
+            </li><br>
+            <li>
+                <p>La derivada de N veces una función es N veces la derivada de la función</p>
+                <ol>
+                <li>
+                    <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x^{2}</script> se obtiene <script type="math/tex; mode=inline">2 x</script></p>
+                </li><br>
+                </ol><br/>
+                <p>Así, el resultado es: <script type="math/tex; mode=inline">18 x</script></p>
+            </li><br>
+            </ol><br/>
+            <p>El resultado es: <script type="math/tex; mode=inline">6 x^{2} + 18 x</script></p>
+        </li><br>
+        <li>
+            <p>La derivada de N veces una función es N veces la derivada de la función</p>
+            <ol>
+            <li>
+                <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x</script> se obtiene <script type="math/tex; mode=inline">1</script></p>
+            </li><br>
+            </ol><br/>
+            <p>Así, el resultado es: <script type="math/tex; mode=inline">12</script></p>
+        </li><br>
+        </ol><br/>
+        <p>El resultado es: <script type="math/tex; mode=inline">6 x^{2} + 18 x + 12</script></p>
+    </li><br>
+    <li>
+        <p>La derivada de la constante <script type="math/tex; mode=inline">5</script> es cero.</p>
+    </li><br>
+    </ol><br/>
+    <p>El resultado es: <script type="math/tex; mode=inline">6 x^{2} + 18 x + 12</script></p>
+</li><br>
+<li>
+    <p>Simplificando:</p>
+    <p><script type="math/tex; mode=display">6 \left(x + 1\right) \left(x + 2\right)</script></p>
+</li><br>
+</ol><br/>
+<hr/>
+    <p>La respuesta es:</p>
+    <p><script type="math/tex; mode=display">6 \left(x + 1\right) \left(x + 2\right)</script></p>Resolviendo $$6 x^{2} + 18 x + 12=0$$ obtenemos las raices<br/>$$x_1=-2$$ <br/>$$x_2=-1$$ <br/>Sustituyendo en $$\left(12 x + \left(2 x^{3} + 9 x^{2}\right)\right) + 5$$, se obtienen los puntos:<br/>$$P_1(-2,1)$$<br/>$$P_2(-1,0)$$<br/>
+<jsxgraph width="600" height="500">
+function f(x) { return 12*x + 2*x**3 + 9*x**2 + 5; }
+ var brd = JXG.JSXGraph.initBoard(BOARDID, {boundingbox:[-7/2,5/2,1/2,-3/2], axis:true});
+var p = brd.create("point", [-2,1],{name:'P1',fixed:true});
+var l = brd.create("functiongraph",[function(x){ return 1;}]);
+var p = brd.create("point", [-1,0],{name:'P2',fixed:true});
+var l = brd.create("functiongraph",[function(x){ return 0;}]);
+var c = brd.create("functiongraph", f, {strokewidth:2});
+</jsxgraph>
+</span><span style="color: #ff0000; font-size: large"><strong>PROCEDIMIENTO DE SOLUCION PASO A PASO</strong></span><br/><br/>En este ejercicio y con objeto de que uses uno de los mejores Sistemas Algebraicos Computacionales (CAS) llamado <span style="color: #ff0000"><strong>Symbolab</strong></span>, obtendrás el procedimiento de solución de este ejercicio paso a paso.<br/>Es importante que analice el procedimiento dado por Symbolab; en examen tendrás que hacer el procedimiento detallado de algún ejercicio similar.<br/><br/>Si requieres revisión en algún punto de tu desarrollo en papel, muestra tu procedimiento detallado a algún profesor de galoisenlinea y con mucho gusto aclararemos tus dudas. <br/><ul style="list-style-type:square"><li>Click en cada fórmula en azul y copia el texto:<br><br><center><span style="color:#ff0000; fontsize:medium;"><strong>Los puntos donde la derivada se anula son:</strong></span><br/><br/><span style="color: #0000ff; font-size:x-large;"><strong> puntos extremos de f\left(x\right)=2x^3+9x^2+12x+5</strong></span></center></li><br/><li>Click en icono de Symbolab:<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 100px; height: 70px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a></li><li>Pega en la ventana de entrada de datos de Symbolab tu texto copiado. Allí obtendrás la solución del ejercicio paso a paso.</li></ul><p style="text-align: left;"><span style="color: rgb(255, 0, 0); font-size: x-large;"><strong>Biblioteca en galoisenlinea:</strong></span>&nbsp; &nbsp;&nbsp;<strong style="text-align: center; color: rgb(0, 0, 0); font-size: x-large;">Consulta material relacionado a este ejercicio aquí:&nbsp;&nbsp;<a href="http://galois.azc.uam.mx/mate/DIFERENCIAL/autoevaluacion1/index.html" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/folder3.webp" alt="" width="100" height="75" role="presentation" class="img-responsive atto_image_button_text-bottom"></a>&nbsp; &nbsp;&nbsp;</strong></p><center>
+</center><strong>
+
+	
+<br>
+<br>
+<br>
+
+<span style="color: #ff0000; font-size: large;"><strong>
+LIBRO DE TEXTO Y SOLUCIONARIO AL LIBRO DE TEXTO:</strong></span><br>
+	<br>
+TEXTO: Para teoría y ejercicios consulta el libro: George B. Thomas, Jr. Decimosegunda edición 
+Massachusetts Institute of Technology.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+SOLUCIONARIO AL TEXTO: Consulta el libro: THOMAS' CALCULUS, Solution Manual,  Twelfth Edition.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+<br>
+<br>
+<span style="color: #ff0000; font-size: large;"><strong>
+CAS (Sistemas algebraicos computacionales):</strong></span><br>
+
+En las autoevaluaciones, una vez que realices cada ejercicio, te sugerimos usar cualquiera de los 
+siguientes Sistemas Algebraicos Computacionales (CAS) para comprobar tus cálculos. 
+<br>
+En exámenes no podrás usar ninguno de estos CAS.   Click en iconos para abrir CAS.<br>&nbsp;
+<br>
+<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 120px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;&nbsp;
+<a title="Mathway" href="https://www.mathway.com/" target="_blank"><img title="Mathway" style="width: 150px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/mathway.png" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wiris" href="http://www.wiris.net/demo/wiris/manual/es/html/tour/index.html" target="_blank"><img title="Wiris" style="width: 100px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wiris.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wolfram Alpha" href="https://www.wolframalpha.com/" target="_blank"><img title="Wolfram Alpha" style="width: 150px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wolframalpha.png" border="0" height="40" hspace="0" width="40"></a><br><br>&nbsp;</strong>    ]]></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+  </question>
+<!-- question: Sevilla_step_by_step_horizontal_tangents_graph_001  -->
+  <question type="cloze">
+    <name>
+      <text>Sevilla_step_by_step_horizontal_tangents_graph_001</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<span style="color: #ff0000,2E8B57; font-size: large;"><strong>
+galoisenlinea&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; http://galois.azc.uam.mx </strong></span>
+<span style="color: #E38E03; font-size: large;"><strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En este ejercicio encontrarás la recta tangente a una curva en un punto</strong></span> <br><br><span style="color: #ff0000; font-size: xx-large;"><strong>
+PROBLEMA:
+</strong></span><center><span style="color: #0000ff; font-size: x-large;"><strong>Determine los puntos donde la curva<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$\displaystyle f(x)=2x^3+9x^2-24x+4 $$<br/><br/>tiene una o mas tangentes horizontales.<br/></strong><br/><br/></span><span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Los puntos en donde las tangentes son horizontales son: </strong></span><br/><br/>$$\displaystyle P_1($${1:SHORTANSWER:=-4}$$,$${1:SHORTANSWER:=116}$$)$$ <br/>$$\displaystyle P_2($${1:SHORTANSWER:=1}$$,$${1:SHORTANSWER:=-9}$$)$$ <br/></strong></span><br/><span style="color: #000000; font-size: medium;"><strong>Usted deberá calcular la derivada $$f(x)$$, igualarla a cero y encontrar las raices, para luego escribir las coordenadas de cada punto<br/><span style="color: #FF4000; font-size: medium;"><strong>
+¿ Revisión de su ejercicio ? Escribirás en papel el procedimiento detallado que muestre cómo obtuviste tus respuestas. 
+</strong></span>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<span style="color: #000000; font-size: large;"><strong>Instrucciones para hacer autoevaluaciones y poder presentar examen de unidad.</strong></span><br/><br/>a).- Nos interesa que usted domine el
+ejercicio aquí mostrado; para ello tendrá que seguir un procedimiento
+detallado, similar al que ofrece Symbolab. Cualquier duda, consulte a cualquier
+profesor de galoisenlinea, en los siguientes lugares y horarios:&nbsp; <a href="http://galois.azc.uam.mx/mate/propaganda/horarios.pdf" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/entrar.gif" alt="" width="80" height="64" role="presentation" class="img-responsive atto_image_button_middle"></a><br/><p>b).-Realiza tantas autoevaluaciones como tú lo necesites. Entre más mejor !!!</p><br/><br/><span style="color: #000000; font-size: x-large"><strong>SOLUCIÓN:</strong></span><br/><br/><span style="color: #000000; font-size: large">Obtener: $$\frac{d}{d x} \left(\left(- 24 x + \left(2 x^{3} + 9 x^{2}\right)\right) + 4\right)$$<br><br><ol>
+<li>
+    <p>Diferenciando <script type="math/tex; mode=inline">\left(- 24 x + \left(2 x^{3} + 9 x^{2}\right)\right) + 4</script> término por término:</p>
+    <ol>
+    <li>
+        <p>Diferenciando <script type="math/tex; mode=inline">- 24 x + \left(2 x^{3} + 9 x^{2}\right)</script> término por término:</p>
+        <ol>
+        <li>
+            <p>Diferenciando <script type="math/tex; mode=inline">2 x^{3} + 9 x^{2}</script> término por término:</p>
+            <ol>
+            <li>
+                <p>La derivada de N veces una función es N veces la derivada de la función</p>
+                <ol>
+                <li>
+                    <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x^{3}</script> se obtiene <script type="math/tex; mode=inline">3 x^{2}</script></p>
+                </li><br>
+                </ol><br/>
+                <p>Así, el resultado es: <script type="math/tex; mode=inline">6 x^{2}</script></p>
+            </li><br>
+            <li>
+                <p>La derivada de N veces una función es N veces la derivada de la función</p>
+                <ol>
+                <li>
+                    <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x^{2}</script> se obtiene <script type="math/tex; mode=inline">2 x</script></p>
+                </li><br>
+                </ol><br/>
+                <p>Así, el resultado es: <script type="math/tex; mode=inline">18 x</script></p>
+            </li><br>
+            </ol><br/>
+            <p>El resultado es: <script type="math/tex; mode=inline">6 x^{2} + 18 x</script></p>
+        </li><br>
+        <li>
+            <p>La derivada de N veces una función es N veces la derivada de la función</p>
+            <ol>
+            <li>
+                <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x</script> se obtiene <script type="math/tex; mode=inline">1</script></p>
+            </li><br>
+            </ol><br/>
+            <p>Así, el resultado es: <script type="math/tex; mode=inline">-24</script></p>
+        </li><br>
+        </ol><br/>
+        <p>El resultado es: <script type="math/tex; mode=inline">6 x^{2} + 18 x - 24</script></p>
+    </li><br>
+    <li>
+        <p>La derivada de la constante <script type="math/tex; mode=inline">4</script> es cero.</p>
+    </li><br>
+    </ol><br/>
+    <p>El resultado es: <script type="math/tex; mode=inline">6 x^{2} + 18 x - 24</script></p>
+</li><br>
+<li>
+    <p>Simplificando:</p>
+    <p><script type="math/tex; mode=display">6 \left(x - 1\right) \left(x + 4\right)</script></p>
+</li><br>
+</ol><br/>
+<hr/>
+    <p>La respuesta es:</p>
+    <p><script type="math/tex; mode=display">6 \left(x - 1\right) \left(x + 4\right)</script></p>Resolviendo $$6 x^{2} + 18 x - 24=0$$ obtenemos las raices<br/>$$x_1=-4$$ <br/>$$x_2=1$$ <br/>Sustituyendo en $$\left(- 24 x + \left(2 x^{3} + 9 x^{2}\right)\right) + 4$$, se obtienen los puntos:<br/>$$P_1(-4,116)$$<br/>$$P_2(1,-9)$$<br/>
+<jsxgraph width="600" height="500">
+function f(x) { return -24*x + 2*x**3 + 9*x**2 + 4; }
+ var brd = JXG.JSXGraph.initBoard(BOARDID, {boundingbox:[-155/2,259/2,149/2,-45/2], axis:true});
+var p = brd.create("point", [-4,116],{name:'P1',fixed:true});
+var l = brd.create("functiongraph",[function(x){ return 116;}]);
+var p = brd.create("point", [1,-9],{name:'P2',fixed:true});
+var l = brd.create("functiongraph",[function(x){ return -9;}]);
+var c = brd.create("functiongraph", f, {strokewidth:2});
+</jsxgraph>
+</span><span style="color: #ff0000; font-size: large"><strong>PROCEDIMIENTO DE SOLUCION PASO A PASO</strong></span><br/><br/>En este ejercicio y con objeto de que uses uno de los mejores Sistemas Algebraicos Computacionales (CAS) llamado <span style="color: #ff0000"><strong>Symbolab</strong></span>, obtendrás el procedimiento de solución de este ejercicio paso a paso.<br/>Es importante que analice el procedimiento dado por Symbolab; en examen tendrás que hacer el procedimiento detallado de algún ejercicio similar.<br/><br/>Si requieres revisión en algún punto de tu desarrollo en papel, muestra tu procedimiento detallado a algún profesor de galoisenlinea y con mucho gusto aclararemos tus dudas. <br/><ul style="list-style-type:square"><li>Click en cada fórmula en azul y copia el texto:<br><br><center><span style="color:#ff0000; fontsize:medium;"><strong>Los puntos donde la derivada se anula son:</strong></span><br/><br/><span style="color: #0000ff; font-size:x-large;"><strong> puntos extremos de f\left(x\right)=2x^3+9x^2-24x+4</strong></span></center></li><br/><li>Click en icono de Symbolab:<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 100px; height: 70px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a></li><li>Pega en la ventana de entrada de datos de Symbolab tu texto copiado. Allí obtendrás la solución del ejercicio paso a paso.</li></ul><p style="text-align: left;"><span style="color: rgb(255, 0, 0); font-size: x-large;"><strong>Biblioteca en galoisenlinea:</strong></span>&nbsp; &nbsp;&nbsp;<strong style="text-align: center; color: rgb(0, 0, 0); font-size: x-large;">Consulta material relacionado a este ejercicio aquí:&nbsp;&nbsp;<a href="http://galois.azc.uam.mx/mate/DIFERENCIAL/autoevaluacion1/index.html" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/folder3.webp" alt="" width="100" height="75" role="presentation" class="img-responsive atto_image_button_text-bottom"></a>&nbsp; &nbsp;&nbsp;</strong></p><center>
+</center><strong>
+
+	
+<br>
+<br>
+<br>
+
+<span style="color: #ff0000; font-size: large;"><strong>
+LIBRO DE TEXTO Y SOLUCIONARIO AL LIBRO DE TEXTO:</strong></span><br>
+	<br>
+TEXTO: Para teoría y ejercicios consulta el libro: George B. Thomas, Jr. Decimosegunda edición 
+Massachusetts Institute of Technology.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+SOLUCIONARIO AL TEXTO: Consulta el libro: THOMAS' CALCULUS, Solution Manual,  Twelfth Edition.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+<br>
+<br>
+<span style="color: #ff0000; font-size: large;"><strong>
+CAS (Sistemas algebraicos computacionales):</strong></span><br>
+
+En las autoevaluaciones, una vez que realices cada ejercicio, te sugerimos usar cualquiera de los 
+siguientes Sistemas Algebraicos Computacionales (CAS) para comprobar tus cálculos. 
+<br>
+En exámenes no podrás usar ninguno de estos CAS.   Click en iconos para abrir CAS.<br>&nbsp;
+<br>
+<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 120px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;&nbsp;
+<a title="Mathway" href="https://www.mathway.com/" target="_blank"><img title="Mathway" style="width: 150px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/mathway.png" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wiris" href="http://www.wiris.net/demo/wiris/manual/es/html/tour/index.html" target="_blank"><img title="Wiris" style="width: 100px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wiris.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wolfram Alpha" href="https://www.wolframalpha.com/" target="_blank"><img title="Wolfram Alpha" style="width: 150px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wolframalpha.png" border="0" height="40" hspace="0" width="40"></a><br><br>&nbsp;</strong>    ]]></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+  </question>
+</quiz>

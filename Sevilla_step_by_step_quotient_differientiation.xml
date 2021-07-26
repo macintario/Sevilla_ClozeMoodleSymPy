@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$module$/Sevilla_step_by_step_derivative</text>
+    </category>
+  </question>
+<!-- question: Sevilla_step_by_step_quotient_differientiation_000  -->
+  <question type="cloze">
+    <name>
+      <text>Sevilla_step_by_step_quotient_differientiation_000</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<span style="color: #ff0000,2E8B57; font-size: large;"><strong>
+galoisenlinea&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; http://galois.azc.uam.mx </strong></span>
+<span style="color: #E38E03; font-size: large;"><strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En este ejercicio aprenderás a aplicar la regla del producto</strong></span> <br><br><span style="color: #ff0000; font-size: xx-large;"><strong>
+PROBLEMA:
+</strong></span><center><span style="color: #0000ff; font-size: x-large;"><strong>Considere la función: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$\displaystyle y(x)=\frac{3x+9}{7x-8} $$<br/></strong><br/><br/></span><span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Calculando la derivada de la función $$y(x)$$ obtenemos que: </strong></span><br/><br/>$$\displaystyle y'(x)=\frac{A}{(Bx+C)^D}$$ <br/></strong></span><br/><span style="color: #000000; font-size: medium;"><strong>Usted deberá calcular la derivada $$y'(x)$$, indicando en papel todos los pasos. <br/>Utilizando el resultado calculado por el sistema, deberás escribir en las cajas correspondientes los números que tú obtuviste. 
+<br/></strong></span>$$A=$${1:SHORTANSWER:=-87} <br/> $$B=$${1:SHORTANSWER:=7} <br/> $$C=$${1:SHORTANSWER:=-8} <br/> $$D=$${1:SHORTANSWER:=2} <br/><span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Los números $$A,B,C,D$$ en este orden y que dan solución correcta al ejercicio son: </strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {20:SHORTANSWER:=-87,7,-8,2}</center> <br></center><br/><span style="color: #FF4000; font-size: medium;"><strong>
+¿ Revisión de su ejercicio ? Escribirás en papel el procedimiento detallado que muestre cómo obtuviste tus respuestas. 
+</strong></span>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<span style="color: #000000; font-size: large;"><strong>Instrucciones para hacer autoevaluaciones y poder presentar examen de unidad.</strong></span><br/><br/>a).- Nos interesa que usted domine el
+ejercicio aquí mostrado; para ello tendrá que seguir un procedimiento
+detallado, similar al que ofrece Symbolab. Cualquier duda, consulte a cualquier
+profesor de galoisenlinea, en los siguientes lugares y horarios:&nbsp; <a href="http://galois.azc.uam.mx/mate/propaganda/horarios.pdf" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/entrar.gif" alt="" width="80" height="64" role="presentation" class="img-responsive atto_image_button_middle"></a><br/><p>b).-Realiza tantas autoevaluaciones como tú lo necesites. Entre más mejor !!!</p><br/><br/><span style="color: #000000; font-size: x-large"><strong>SOLUCIÓN:</strong></span><br/><br/><span style="color: #000000; font-size: large">Obtener: $$\frac{d}{d x} \frac{3 x + 9}{7 x - 8}$$<br><br><ol>
+<li>
+    <p>Aplicando la regla del cociente que es:</p>
+    <p><script type="math/tex; mode=display">\frac{d}{d x}( \frac{f{\left(x \right)}}{g{\left(x \right)}}) = \frac{- f{\left(x \right)} \frac{d}{d x}( g{\left(x \right)}) + g{\left(x \right)} \frac{d}{d x}( f{\left(x \right))}}{g^{2}{\left(x \right)}}</script></p>
+    <p><script type="math/tex; mode=inline">f{\left(x \right)} = 3 x + 9</script> y <script type="math/tex; mode=inline">g{\left(x \right)} = 7 x - 8</script>.</p>
+    <p>Para hallar <script type="math/tex; mode=inline">\frac{d}{d x}( f{\left(x \right)})</script>:</p>
+    <ol>
+    <li>
+        <p>Diferenciando <script type="math/tex; mode=inline">3 x + 9</script> término por término:</p>
+        <ol>
+        <li>
+            <p>La derivada de la constante <script type="math/tex; mode=inline">9</script> es cero.</p>
+        </li><br>
+        <li>
+            <p>La derivada de N veces una función es N veces la derivada de la función</p>
+            <ol>
+            <li>
+                <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x</script> se obtiene <script type="math/tex; mode=inline">1</script></p>
+            </li><br>
+            </ol><br/>
+            <p>Así, el resultado es: <script type="math/tex; mode=inline">3</script></p>
+        </li><br>
+        </ol><br/>
+        <p>El resultado es: <script type="math/tex; mode=inline">3</script></p>
+    </li><br>
+    </ol><br/>
+    <p>Para hallar <script type="math/tex; mode=inline">\frac{d}{d x}( g{\left(x \right)})</script>:</p>
+    <ol>
+    <li>
+        <p>Diferenciando <script type="math/tex; mode=inline">7 x - 8</script> término por término:</p>
+        <ol>
+        <li>
+            <p>La derivada de la constante <script type="math/tex; mode=inline">-8</script> es cero.</p>
+        </li><br>
+        <li>
+            <p>La derivada de N veces una función es N veces la derivada de la función</p>
+            <ol>
+            <li>
+                <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x</script> se obtiene <script type="math/tex; mode=inline">1</script></p>
+            </li><br>
+            </ol><br/>
+            <p>Así, el resultado es: <script type="math/tex; mode=inline">7</script></p>
+        </li><br>
+        </ol><br/>
+        <p>El resultado es: <script type="math/tex; mode=inline">7</script></p>
+    </li><br>
+    </ol><br/>
+    <p>Sutituyendo en la regla del cociente:</p>
+    <p><script type="math/tex; mode=inline">- \frac{87}{\left(7 x - 8\right)^{2}}</script></p>
+</li><br>
+</ol><br/>
+<hr/>
+    <p>La respuesta es:</p>
+    <p><script type="math/tex; mode=display">- \frac{87}{\left(7 x - 8\right)^{2}}</script></p></span><span style="color: #ff0000; font-size: large"><strong>PROCEDIMIENTO DE SOLUCION PASO A PASO</strong></span><br/><br/>En este ejercicio y con objeto de que uses uno de los mejores Sistemas Algebraicos Computacionales (CAS) llamado <span style="color: #ff0000"><strong>Symbolab</strong></span>, obtendrás el procedimiento de solución de este ejercicio paso a paso.<br/>Es importante que analice el procedimiento dado por Symbolab; en examen tendrás que hacer el procedimiento detallado de algún ejercicio similar.<br/><br/>Si requieres revisión en algún punto de tu desarrollo en papel, muestra tu procedimiento detallado a algún profesor de galoisenlinea y con mucho gusto aclararemos tus dudas. <br/><ul style="list-style-type:square"><li>Click en cada fórmula en azul y copia el texto:<br><br><center><span style="color:#ff0000; fontsize:medium;"><strong>La derivada de la función $$f(x)$$ es:</strong></span><br/><br/><span style="color: #0000ff; font-size:x-large;"><strong> \frac{d}{dx}\left(\frac{3x+9}{7x-8} \right)</strong></span></center></li><br/><li>Click en icono de Symbolab:<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 100px; height: 70px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a></li><li>Pega en la ventana de entrada de datos de Symbolab tu texto copiado. Allí obtendrás la solución del ejercicio paso a paso.</li></ul><p style="text-align: left;"><span style="color: rgb(255, 0, 0); font-size: x-large;"><strong>Biblioteca en galoisenlinea:</strong></span>&nbsp; &nbsp;&nbsp;<strong style="text-align: center; color: rgb(0, 0, 0); font-size: x-large;">Consulta material relacionado a este ejercicio aquí:&nbsp;&nbsp;<a href="http://galois.azc.uam.mx/mate/DIFERENCIAL/autoevaluacion1/index.html" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/folder3.webp" alt="" width="100" height="75" role="presentation" class="img-responsive atto_image_button_text-bottom"></a>&nbsp; &nbsp;&nbsp;</strong></p><center>
+</center><strong>
+
+	
+<br>
+<br>
+<br>
+
+<span style="color: #ff0000; font-size: large;"><strong>
+LIBRO DE TEXTO Y SOLUCIONARIO AL LIBRO DE TEXTO:</strong></span><br>
+	<br>
+TEXTO: Para teoría y ejercicios consulta el libro: George B. Thomas, Jr. Decimosegunda edición 
+Massachusetts Institute of Technology.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+SOLUCIONARIO AL TEXTO: Consulta el libro: THOMAS' CALCULUS, Solution Manual,  Twelfth Edition.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+<br>
+<br>
+<span style="color: #ff0000; font-size: large;"><strong>
+CAS (Sistemas algebraicos computacionales):</strong></span><br>
+
+En las autoevaluaciones, una vez que realices cada ejercicio, te sugerimos usar cualquiera de los 
+siguientes Sistemas Algebraicos Computacionales (CAS) para comprobar tus cálculos. 
+<br>
+En exámenes no podrás usar ninguno de estos CAS.   Click en iconos para abrir CAS.<br>&nbsp;
+<br>
+<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 120px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;&nbsp;
+<a title="Mathway" href="https://www.mathway.com/" target="_blank"><img title="Mathway" style="width: 150px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/mathway.png" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wiris" href="http://www.wiris.net/demo/wiris/manual/es/html/tour/index.html" target="_blank"><img title="Wiris" style="width: 100px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wiris.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wolfram Alpha" href="https://www.wolframalpha.com/" target="_blank"><img title="Wolfram Alpha" style="width: 150px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wolframalpha.png" border="0" height="40" hspace="0" width="40"></a><br><br>&nbsp;</strong>    ]]></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+  </question>
+<!-- question: Sevilla_step_by_step_quotient_differientiation_001  -->
+  <question type="cloze">
+    <name>
+      <text>Sevilla_step_by_step_quotient_differientiation_001</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<span style="color: #ff0000,2E8B57; font-size: large;"><strong>
+galoisenlinea&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; http://galois.azc.uam.mx </strong></span>
+<span style="color: #E38E03; font-size: large;"><strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En este ejercicio aprenderás a aplicar la regla del producto</strong></span> <br><br><span style="color: #ff0000; font-size: xx-large;"><strong>
+PROBLEMA:
+</strong></span><center><span style="color: #0000ff; font-size: x-large;"><strong>Considere la función: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$\displaystyle y(x)=\frac{7x+3}{8x-9} $$<br/></strong><br/><br/></span><span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Calculando la derivada de la función $$y(x)$$ obtenemos que: </strong></span><br/><br/>$$\displaystyle y'(x)=\frac{A}{(Bx+C)^D}$$ <br/></strong></span><br/><span style="color: #000000; font-size: medium;"><strong>Usted deberá calcular la derivada $$y'(x)$$, indicando en papel todos los pasos. <br/>Utilizando el resultado calculado por el sistema, deberás escribir en las cajas correspondientes los números que tú obtuviste. 
+<br/></strong></span>$$A=$${1:SHORTANSWER:=-87} <br/> $$B=$${1:SHORTANSWER:=8} <br/> $$C=$${1:SHORTANSWER:=-9} <br/> $$D=$${1:SHORTANSWER:=2} <br/><span style="color: #ff0000; font-size: x-large;"><strong><script type="math/tex">\bullet</script> &nbsp;&nbsp;&nbsp; Los números $$A,B,C,D$$ en este orden y que dan solución correcta al ejercicio son: </strong></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {20:SHORTANSWER:=-87,8,-9,2}</center> <br></center><br/><span style="color: #FF4000; font-size: medium;"><strong>
+¿ Revisión de su ejercicio ? Escribirás en papel el procedimiento detallado que muestre cómo obtuviste tus respuestas. 
+</strong></span>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<span style="color: #000000; font-size: large;"><strong>Instrucciones para hacer autoevaluaciones y poder presentar examen de unidad.</strong></span><br/><br/>a).- Nos interesa que usted domine el
+ejercicio aquí mostrado; para ello tendrá que seguir un procedimiento
+detallado, similar al que ofrece Symbolab. Cualquier duda, consulte a cualquier
+profesor de galoisenlinea, en los siguientes lugares y horarios:&nbsp; <a href="http://galois.azc.uam.mx/mate/propaganda/horarios.pdf" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/entrar.gif" alt="" width="80" height="64" role="presentation" class="img-responsive atto_image_button_middle"></a><br/><p>b).-Realiza tantas autoevaluaciones como tú lo necesites. Entre más mejor !!!</p><br/><br/><span style="color: #000000; font-size: x-large"><strong>SOLUCIÓN:</strong></span><br/><br/><span style="color: #000000; font-size: large">Obtener: $$\frac{d}{d x} \frac{7 x + 3}{8 x - 9}$$<br><br><ol>
+<li>
+    <p>Aplicando la regla del cociente que es:</p>
+    <p><script type="math/tex; mode=display">\frac{d}{d x}( \frac{f{\left(x \right)}}{g{\left(x \right)}}) = \frac{- f{\left(x \right)} \frac{d}{d x}( g{\left(x \right)}) + g{\left(x \right)} \frac{d}{d x}( f{\left(x \right))}}{g^{2}{\left(x \right)}}</script></p>
+    <p><script type="math/tex; mode=inline">f{\left(x \right)} = 7 x + 3</script> y <script type="math/tex; mode=inline">g{\left(x \right)} = 8 x - 9</script>.</p>
+    <p>Para hallar <script type="math/tex; mode=inline">\frac{d}{d x}( f{\left(x \right)})</script>:</p>
+    <ol>
+    <li>
+        <p>Diferenciando <script type="math/tex; mode=inline">7 x + 3</script> término por término:</p>
+        <ol>
+        <li>
+            <p>La derivada de la constante <script type="math/tex; mode=inline">3</script> es cero.</p>
+        </li><br>
+        <li>
+            <p>La derivada de N veces una función es N veces la derivada de la función</p>
+            <ol>
+            <li>
+                <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x</script> se obtiene <script type="math/tex; mode=inline">1</script></p>
+            </li><br>
+            </ol><br/>
+            <p>Así, el resultado es: <script type="math/tex; mode=inline">7</script></p>
+        </li><br>
+        </ol><br/>
+        <p>El resultado es: <script type="math/tex; mode=inline">7</script></p>
+    </li><br>
+    </ol><br/>
+    <p>Para hallar <script type="math/tex; mode=inline">\frac{d}{d x}( g{\left(x \right)})</script>:</p>
+    <ol>
+    <li>
+        <p>Diferenciando <script type="math/tex; mode=inline">8 x - 9</script> término por término:</p>
+        <ol>
+        <li>
+            <p>La derivada de la constante <script type="math/tex; mode=inline">-9</script> es cero.</p>
+        </li><br>
+        <li>
+            <p>La derivada de N veces una función es N veces la derivada de la función</p>
+            <ol>
+            <li>
+                <p>Aplicando la regla de potencia a: <script type="math/tex; mode=inline">x</script> se obtiene <script type="math/tex; mode=inline">1</script></p>
+            </li><br>
+            </ol><br/>
+            <p>Así, el resultado es: <script type="math/tex; mode=inline">8</script></p>
+        </li><br>
+        </ol><br/>
+        <p>El resultado es: <script type="math/tex; mode=inline">8</script></p>
+    </li><br>
+    </ol><br/>
+    <p>Sutituyendo en la regla del cociente:</p>
+    <p><script type="math/tex; mode=inline">- \frac{87}{\left(8 x - 9\right)^{2}}</script></p>
+</li><br>
+</ol><br/>
+<hr/>
+    <p>La respuesta es:</p>
+    <p><script type="math/tex; mode=display">- \frac{87}{\left(8 x - 9\right)^{2}}</script></p></span><span style="color: #ff0000; font-size: large"><strong>PROCEDIMIENTO DE SOLUCION PASO A PASO</strong></span><br/><br/>En este ejercicio y con objeto de que uses uno de los mejores Sistemas Algebraicos Computacionales (CAS) llamado <span style="color: #ff0000"><strong>Symbolab</strong></span>, obtendrás el procedimiento de solución de este ejercicio paso a paso.<br/>Es importante que analice el procedimiento dado por Symbolab; en examen tendrás que hacer el procedimiento detallado de algún ejercicio similar.<br/><br/>Si requieres revisión en algún punto de tu desarrollo en papel, muestra tu procedimiento detallado a algún profesor de galoisenlinea y con mucho gusto aclararemos tus dudas. <br/><ul style="list-style-type:square"><li>Click en cada fórmula en azul y copia el texto:<br><br><center><span style="color:#ff0000; fontsize:medium;"><strong>La derivada de la función $$f(x)$$ es:</strong></span><br/><br/><span style="color: #0000ff; font-size:x-large;"><strong> \frac{d}{dx}\left(\frac{7x+3}{8x-9} \right)</strong></span></center></li><br/><li>Click en icono de Symbolab:<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 100px; height: 70px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a></li><li>Pega en la ventana de entrada de datos de Symbolab tu texto copiado. Allí obtendrás la solución del ejercicio paso a paso.</li></ul><p style="text-align: left;"><span style="color: rgb(255, 0, 0); font-size: x-large;"><strong>Biblioteca en galoisenlinea:</strong></span>&nbsp; &nbsp;&nbsp;<strong style="text-align: center; color: rgb(0, 0, 0); font-size: x-large;">Consulta material relacionado a este ejercicio aquí:&nbsp;&nbsp;<a href="http://galois.azc.uam.mx/mate/DIFERENCIAL/autoevaluacion1/index.html" target="_blank"><img src="http://galois.azc.uam.mx/mate/imagenes/folder3.webp" alt="" width="100" height="75" role="presentation" class="img-responsive atto_image_button_text-bottom"></a>&nbsp; &nbsp;&nbsp;</strong></p><center>
+</center><strong>
+
+	
+<br>
+<br>
+<br>
+
+<span style="color: #ff0000; font-size: large;"><strong>
+LIBRO DE TEXTO Y SOLUCIONARIO AL LIBRO DE TEXTO:</strong></span><br>
+	<br>
+TEXTO: Para teoría y ejercicios consulta el libro: George B. Thomas, Jr. Decimosegunda edición 
+Massachusetts Institute of Technology.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/thomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+SOLUCIONARIO AL TEXTO: Consulta el libro: THOMAS' CALCULUS, Solution Manual,  Twelfth Edition.
+<a title="matematicas en galoisenlinea " href="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" target="_blank"><img title="c" style="width: 90px; height: 100px;" alt="c" src="http://galois.azc.uam.mx/mate/diferencial/solucionariothomas.jpg" border="0" height="50" hspace="0" width="50"></a>
+<br><br>&nbsp;
+<br>
+<br>
+<br>
+<span style="color: #ff0000; font-size: large;"><strong>
+CAS (Sistemas algebraicos computacionales):</strong></span><br>
+
+En las autoevaluaciones, una vez que realices cada ejercicio, te sugerimos usar cualquiera de los 
+siguientes Sistemas Algebraicos Computacionales (CAS) para comprobar tus cálculos. 
+<br>
+En exámenes no podrás usar ninguno de estos CAS.   Click en iconos para abrir CAS.<br>&nbsp;
+<br>
+<a title="Symbolab" href="https://www.symbolab.com/solver" target="_blank"><img title="Symbolab" style="width: 120px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/propaganda/symbolab.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;&nbsp;
+<a title="Mathway" href="https://www.mathway.com/" target="_blank"><img title="Mathway" style="width: 150px; height: 45px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/mathway.png" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wiris" href="http://www.wiris.net/demo/wiris/manual/es/html/tour/index.html" target="_blank"><img title="Wiris" style="width: 100px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wiris.jpg" border="0" height="40" hspace="0" width="40"></a>
+&nbsp;
+<a title="Wolfram Alpha" href="https://www.wolframalpha.com/" target="_blank"><img title="Wolfram Alpha" style="width: 150px; height: 50px;" alt="c" src="http://galois.azc.uam.mx/mate/imagenes/wolframalpha.png" border="0" height="40" hspace="0" width="40"></a><br><br>&nbsp;</strong>    ]]></text>
+    </generalfeedback>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+  </question>
+</quiz>
