@@ -83,7 +83,7 @@ public class Gen3_TangentPointGraph implements GeneradorReactivoCloze {
      * $COMENTARIO$ en la plantilla del reactivo.
      *
      */
-    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_Tangent_Point_SBS_";
+    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_step_by_step_tangent_graph_";
     private static final String SEPARADOR_REACTIVOS = "\r\n";
 
     @Override

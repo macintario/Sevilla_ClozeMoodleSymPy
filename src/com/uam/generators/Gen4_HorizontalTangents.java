@@ -75,9 +75,7 @@ public class Gen4_HorizontalTangents implements GeneradorReactivoCloze {
             +" {20:SHORTANSWER:=$RESPUESTA_A$,$RESPUESTA_B$"
             + "}</center> <br>"
             + "</center>";
-/**
- *
- */
+
     /**
      * El comentario que se pondrá a cada reactivo para etiquetarlo, el sufijo
      * sera el número de reactivo. Éste se insertará como un comentario html
@@ -86,7 +84,7 @@ public class Gen4_HorizontalTangents implements GeneradorReactivoCloze {
      * $COMENTARIO$ en la plantilla del reactivo.
      *
      */
-    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_Hor_Tan_SBS";
+    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_step_by_step_horizontal_tangents_graph_";
     private static final String SEPARADOR_REACTIVOS = "\r\n";
 
     @Override

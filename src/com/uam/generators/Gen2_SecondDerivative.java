@@ -93,7 +93,7 @@ public class Gen2_SecondDerivative implements GeneradorReactivoCloze {
      * $COMENTARIO$ en la plantilla del reactivo.
      *
      */
-    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_2nd_deriv_SBS_";
+    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_step_by_step_second_derivative_";
     private static final String SEPARADOR_REACTIVOS = "\r\n";
 
     @Override

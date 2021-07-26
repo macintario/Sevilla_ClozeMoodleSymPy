@@ -89,7 +89,7 @@ public class Gen1_Quotient implements GeneradorReactivoCloze {
      * $COMENTARIO$ en la plantilla del reactivo.
      *
      */
-    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevillla_Quotient_Derivative_SBS_";
+    private static final String COMENTARIO_REACTIVO_PREFIJO = "Sevilla_step_by_step_quotient_differientiation_";
     private static final String SEPARADOR_REACTIVOS = "\r\n";
 
     @Override
